@@ -1,0 +1,43 @@
+\doxysection{watersensor.\+c}
+\hypertarget{watersensor_8c_source}{}\label{watersensor_8c_source}\index{Code/watersensor.c@{Code/watersensor.c}}
+\mbox{\hyperlink{watersensor_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}stm32f7xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{watersensor_8h}{watersensor.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00005}\mbox{\hyperlink{watersensor_8c_aeb15cf9ce7e049f856caa1152f4c768a}{00005}}\ GPIO\_InitTypeDef\ \mbox{\hyperlink{watersensor_8c_aeb15cf9ce7e049f856caa1152f4c768a}{watersensor\_gpio}};}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00006}\mbox{\hyperlink{watersensor_8c_a9d8dded281aa82079c1f7d9b0599da02}{00006}}\ ADC\_ChannelConfTypeDef\ \mbox{\hyperlink{watersensor_8c_a9d8dded281aa82079c1f7d9b0599da02}{watersensorConfig}};}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00007}\mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{00007}}\ GPIO\_InitTypeDef\ \mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{water\_GPIO}};}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00009}00009\ \textcolor{comment}{//\ init\ ADC\ configuration\ }}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00010}\mbox{\hyperlink{watersensor_8c_abf1c222deda91262a37f34834ccd110c}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{watersensor_8c_abf1c222deda91262a37f34834ccd110c}{water\_ADC\_Init}}(\textcolor{keywordtype}{void})\ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00011}00011\ \ \ \ \ \textcolor{comment}{//enable\ ADC\ clock}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00012}00012\ \ \ \ \ \_\_HAL\_RCC\_ADC1\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00013}00013\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//configure\ channel}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_a9d8dded281aa82079c1f7d9b0599da02}{watersensorConfig}}.Rank\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_a9d8dded281aa82079c1f7d9b0599da02}{watersensorConfig}}.Channel\ =\ ADC\_CHANNEL\_1;\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_a9d8dded281aa82079c1f7d9b0599da02}{watersensorConfig}}.SamplingTime\ =\ ADC\_SAMPLETIME\_28CYCLES;\ \ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00020}00020\ \textcolor{comment}{//init\ GPIO\ for\ analog\ }}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00021}\mbox{\hyperlink{watersensor_8c_a2021ba1ecd50ebb3dbf4e69f90a43597}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{watersensor_8c_a2021ba1ecd50ebb3dbf4e69f90a43597}{water\_GPIO\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//enable\ GPIOA\ clock}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00023}00023\ \ \ \ \ \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//config\ mode\ to\ analog}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{water\_GPIO}}.Pin\ =\ GPIO\_PIN\_0;\ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{water\_GPIO}}.Mode\ =\ GPIO\_MODE\_ANALOG;}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{water\_GPIO}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00028}00028\ \ \ \ \ HAL\_GPIO\_Init(GPIOA,\ \&\mbox{\hyperlink{watersensor_8c_ace211b274983976abdae40d4abe7520b}{water\_GPIO}});}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00031}\mbox{\hyperlink{watersensor_8c_a1ec041eb34ae204a97f5bece1ae1ebb3}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{watersensor_8c_a1ec041eb34ae204a97f5bece1ae1ebb3}{water\_Config}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_a2021ba1ecd50ebb3dbf4e69f90a43597}{water\_GPIO\_Init}}();}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_abf1c222deda91262a37f34834ccd110c}{water\_ADC\_Init}}();}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{watersensor_8c_source_l00037}00037\ }
+
+\end{DoxyCode}

@@ -1,0 +1,62 @@
+\doxysection{Code/button.c File Reference}
+\hypertarget{button_8c}{}\label{button_8c}\index{Code/button.c@{Code/button.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{button_8c_a201e1da8cf81a1dae1d2dd3fa863f60a}{button\+\_\+\+GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function will initialize the GPIO for the button ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}{button\+\_\+\+GPIO}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{button_8c_a201e1da8cf81a1dae1d2dd3fa863f60a}\label{button_8c_a201e1da8cf81a1dae1d2dd3fa863f60a} 
+\index{button.c@{button.c}!button\_GPIO\_Init@{button\_GPIO\_Init}}
+\index{button\_GPIO\_Init@{button\_GPIO\_Init}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{button\_GPIO\_Init()}{button\_GPIO\_Init()}}
+{\footnotesize\ttfamily void button\+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will initialize the GPIO for the button ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{button_8c_source_l00008}{8}} of file \mbox{\hyperlink{button_8c_source}{button.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//enable\ GPIOC\ clock}}
+\DoxyCodeLine{00011\ \ \ \ \ \_\_HAL\_RCC\_GPIOC\_CLK\_ENABLE();}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//configure\ GPIO\ pin\ }}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}{button\_GPIO}}.Pin\ =\ GPIO\_PIN\_6;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}{button\_GPIO}}.Mode\ =\ GPIO\_MODE\_INPUT;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}{button\_GPIO}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{00016\ \ \ \ \ HAL\_GPIO\_Init(GPIOC,\ \&\mbox{\hyperlink{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}{button\_GPIO}});}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f}\label{button_8c_aeed035b6ec3ca95ef5c388e7a2ab843f} 
+\index{button.c@{button.c}!button\_GPIO@{button\_GPIO}}
+\index{button\_GPIO@{button\_GPIO}!button.c@{button.c}}
+\doxysubsubsection{\texorpdfstring{button\_GPIO}{button\_GPIO}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Init\+Type\+Def button\+\_\+\+GPIO}
+
+
+
+Definition at line \mbox{\hyperlink{button_8c_source_l00005}{5}} of file \mbox{\hyperlink{button_8c_source}{button.\+c}}.
+

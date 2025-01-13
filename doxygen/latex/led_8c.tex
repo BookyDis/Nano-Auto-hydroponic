@@ -1,0 +1,106 @@
+\doxysection{Code/led.c File Reference}
+\hypertarget{led_8c}{}\label{led_8c}\index{Code/led.c@{Code/led.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{led_8c_a7fa7a4faf20806beec21aefd1f07b869}{led\+\_\+\+GPIO\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function will initialize the GPIO for the LED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_ab0e7ace9bcd558be2a27be680621d3eb}{led\+\_\+on}} ()
+\begin{DoxyCompactList}\small\item\em This function will write high signal to the GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{led_8c_a501391b8794d0beaeaf0dea7a3bdbbb3}{led\+\_\+off}} ()
+\begin{DoxyCompactList}\small\item\em This function will write low signal to the GPIO pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{led_8c_ae21e3e64b431ca746159452a9c652a11}{led\+\_\+\+GPIO}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{led_8c_a7fa7a4faf20806beec21aefd1f07b869}\label{led_8c_a7fa7a4faf20806beec21aefd1f07b869} 
+\index{led.c@{led.c}!led\_GPIO\_Init@{led\_GPIO\_Init}}
+\index{led\_GPIO\_Init@{led\_GPIO\_Init}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_GPIO\_Init()}{led\_GPIO\_Init()}}
+{\footnotesize\ttfamily void led\+\_\+\+GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will initialize the GPIO for the LED. 
+
+
+
+Definition at line \mbox{\hyperlink{led_8c_source_l00008}{8}} of file \mbox{\hyperlink{led_8c_source}{led.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//enable\ GPIO\ clock}}
+\DoxyCodeLine{00011\ \ \ \ \ \_\_HAL\_RCC\_GPIOC\_CLK\_ENABLE();}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//configure\ GPIO\ pin\ }}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{led_8c_ae21e3e64b431ca746159452a9c652a11}{led\_GPIO}}.Pin\ =\ GPIO\_PIN\_7;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{led_8c_ae21e3e64b431ca746159452a9c652a11}{led\_GPIO}}.Mode\ =\ GPIO\_MODE\_OUTPUT\_PP;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{led_8c_ae21e3e64b431ca746159452a9c652a11}{led\_GPIO}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{00016\ \ \ \ \ HAL\_GPIO\_Init(GPIOC,\ \&\mbox{\hyperlink{led_8c_ae21e3e64b431ca746159452a9c652a11}{led\_GPIO}});}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\Hypertarget{led_8c_a501391b8794d0beaeaf0dea7a3bdbbb3}\label{led_8c_a501391b8794d0beaeaf0dea7a3bdbbb3} 
+\index{led.c@{led.c}!led\_off@{led\_off}}
+\index{led\_off@{led\_off}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_off()}{led\_off()}}
+{\footnotesize\ttfamily void led\+\_\+off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function will write low signal to the GPIO pin. 
+
+
+
+Definition at line \mbox{\hyperlink{led_8c_source_l00024}{24}} of file \mbox{\hyperlink{led_8c_source}{led.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOC,\ GPIO\_PIN\_7,\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+\Hypertarget{led_8c_ab0e7ace9bcd558be2a27be680621d3eb}\label{led_8c_ab0e7ace9bcd558be2a27be680621d3eb} 
+\index{led.c@{led.c}!led\_on@{led\_on}}
+\index{led\_on@{led\_on}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_on()}{led\_on()}}
+{\footnotesize\ttfamily void led\+\_\+on (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function will write high signal to the GPIO pin. 
+
+
+
+Definition at line \mbox{\hyperlink{led_8c_source_l00020}{20}} of file \mbox{\hyperlink{led_8c_source}{led.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOC,\ GPIO\_PIN\_7,\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{led_8c_ae21e3e64b431ca746159452a9c652a11}\label{led_8c_ae21e3e64b431ca746159452a9c652a11} 
+\index{led.c@{led.c}!led\_GPIO@{led\_GPIO}}
+\index{led\_GPIO@{led\_GPIO}!led.c@{led.c}}
+\doxysubsubsection{\texorpdfstring{led\_GPIO}{led\_GPIO}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Init\+Type\+Def led\+\_\+\+GPIO}
+
+
+
+Definition at line \mbox{\hyperlink{led_8c_source_l00005}{5}} of file \mbox{\hyperlink{led_8c_source}{led.\+c}}.
+

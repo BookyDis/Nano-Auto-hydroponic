@@ -1,0 +1,56 @@
+/**
+
+@page Peripheral
+@tableofcontents
+
+These following sections will explain my design and how each peripherals are used and configured.
+
+@section Section1 1) Water sensor
+Water sensor is an analogue sensor which will pick up reading by detecting electricity with whatever the sensor is touching. This module is 
+configured to be analogue mode and is connected to an ADC pin on the board. Also, the sensor is set to ADC channel 1 along with 28 cycle of sample time.
+
+@section Section2 2) Relay
+Relay is a module which recieves a signal from the board that turn on and off according to the signals. The relay normally comes with three sockets 
+at the back which are the NO (Normally opened), NC (Normally closed) and CO (common). Source code for this module will have on and off functions that write high
+and low signals respectively.
+
+@subsection section2 2.1) NO
+NO will have power if the relay is energized.
+@subsection section3 2.2) NC
+NC will have power if the relay is not energized.
+@subsection section4 2.3) CO 
+CO is the where to current flow is happening without connection the circuit wont work.
+
+@section Section3 3) Button
+Button is a module which allows user to press a button in middle and sends input signal the board. This module will have its GPIO set to input mode.
+
+@section Section4 4) Buzzer
+Buzzer is a sound module which work when high signal is recieved. This sound module has on and off fucntion that will work along with the LED.
+
+@section Section5 5) LED
+LED will light up according the PIN signal, high will lit up the LED and low will turn off. This along the buzzer will help diagnose whether the water pump is 
+on or off.
+
+@section Section6 6) Micro Water Pump
+This 3-5v micro water pump will be connected the relay and recieves power from it. Will turn on and off according to the system. 
+
+@section Section7 7) GLCD
+The GLCD will have two pages, one is the home page at the start of the system. The user will have press the screen in order to start the system.
+This is a quality of life feature and it will also reduce the chance of the system starting accidentally. The diagnostic page will display system's status
+such as: "water pump is on" or "water is detected".
+
+@section Section8 8) Breadboard
+This is the main components of this overall system. The breadboard will act as hub for every module to be connected and receives power.
+
+@section Section9 EXTRAS
+This section I will talk about the overall system design 
+@subsection section5 Overall
+The overall code architecture are maintainable, Every source code files are linked to the main source file with a header file. Which means that each files are
+its own block and can be change or redefined indivually. One thing to note about the button.c source file, it is only configuring the GPIO for that
+particular PIN but the actual code loop are written in main.c which could cause stability issues if user which to change the button.c source file.
+
+
+*/
+
+
+

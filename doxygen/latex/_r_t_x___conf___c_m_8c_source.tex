@@ -1,0 +1,310 @@
+\doxysection{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}
+\hypertarget{_r_t_x___conf___c_m_8c_source}{}\label{_r_t_x___conf___c_m_8c_source}\index{Code/RTE/CMSIS/RTX\_Conf\_CM.c@{Code/RTE/CMSIS/RTX\_Conf\_CM.c}}
+\mbox{\hyperlink{_r_t_x___conf___c_m_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00001}00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ \ \ \ CMSIS-\/RTOS\ \ -\/\ \ RTX}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00003}00003\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ Name:\ \ \ \ RTX\_Conf\_CM.C}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Purpose:\ Configuration\ of\ CMSIS\ RTX\ Kernel\ for\ Cortex-\/M}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ \ Rev.:\ \ \ \ V4.70.1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00007}00007\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00009}00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2009\ KEIL,\ 2009-\/2016\ ARM\ Germany\ GmbH.\ All\ rights\ reserved.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00010}00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00011}00011\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ Apache-\/2.0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00012}00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00013}00013\ \textcolor{comment}{\ *\ Licensed\ under\ the\ Apache\ License,\ Version\ 2.0\ (the\ License);\ you\ may}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00014}00014\ \textcolor{comment}{\ *\ not\ use\ this\ file\ except\ in\ compliance\ with\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00015}00015\ \textcolor{comment}{\ *\ You\ may\ obtain\ a\ copy\ of\ the\ License\ at}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00017}00017\ \textcolor{comment}{\ *\ www.apache.org/licenses/LICENSE-\/2.0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00019}00019\ \textcolor{comment}{\ *\ Unless\ required\ by\ applicable\ law\ or\ agreed\ to\ in\ writing,\ software}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00020}00020\ \textcolor{comment}{\ *\ distributed\ under\ the\ License\ is\ distributed\ on\ an\ AS\ IS\ BASIS,\ WITHOUT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00021}00021\ \textcolor{comment}{\ *\ WARRANTIES\ OR\ CONDITIONS\ OF\ ANY\ KIND,\ either\ express\ or\ implied.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00022}00022\ \textcolor{comment}{\ *\ See\ the\ License\ for\ the\ specific\ language\ governing\ permissions\ and}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00023}00023\ \textcolor{comment}{\ *\ limitations\ under\ the\ License.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00024}00024\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00025}00025\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}cmsis\_os.h"{}}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00027}00027\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00029}00029\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00030}00030\ \textcolor{comment}{\ *\ \ \ \ \ \ RTX\ User\ configuration\ part\ BEGIN}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00031}00031\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00032}00032\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00033}00033\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00034}00034\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00035}00035\ \textcolor{comment}{//\ <h>Thread\ Configuration}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00036}00036\ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00037}00037\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00038}00038\ \textcolor{comment}{//\ \ \ <o>Number\ of\ concurrent\ running\ user\ threads\ <1-\/250>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00039}00039\ \textcolor{comment}{//\ \ \ <i>\ Defines\ max.\ number\ of\ user\ threads\ that\ will\ run\ at\ the\ same\ time.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00040}00040\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 6}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00041}00041\ \textcolor{preprocessor}{\#ifndef\ OS\_TASKCNT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00042}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a309353d912327b7f4a2300711ee1b349}{00042}}\ \textcolor{preprocessor}{\ \#define\ OS\_TASKCNT\ \ \ \ \ 6}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00043}00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00044}00044\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00045}00045\ \textcolor{comment}{//\ \ \ <o>Default\ Thread\ stack\ size\ [bytes]\ <64-\/4096:8><\#/4>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00046}00046\ \textcolor{comment}{//\ \ \ <i>\ Defines\ default\ stack\ size\ for\ threads\ with\ osThreadDef\ stacksz\ =\ 0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00047}00047\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 200}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00048}00048\ \textcolor{preprocessor}{\#ifndef\ OS\_STKSIZE}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00049}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a16495c133349f3e7c27ac933857c1a8c}{00049}}\ \textcolor{preprocessor}{\ \#define\ OS\_STKSIZE\ \ \ \ \ 50\ \ \ \ \ \ }\textcolor{comment}{//\ this\ stack\ size\ value\ is\ in\ words}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00050}00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00051}00051\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00052}00052\ \textcolor{comment}{//\ \ \ <o>Main\ Thread\ stack\ size\ [bytes]\ <64-\/32768:8><\#/4>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00053}00053\ \textcolor{comment}{//\ \ \ <i>\ Defines\ stack\ size\ for\ main\ thread.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00054}00054\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 200}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00055}00055\ \textcolor{preprocessor}{\#ifndef\ OS\_MAINSTKSIZE}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00056}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a95362a96f44d4314f148ae24edd52f7c}{00056}}\ \textcolor{preprocessor}{\ \#define\ OS\_MAINSTKSIZE\ 50\ \ \ \ \ \ }\textcolor{comment}{//\ this\ stack\ size\ value\ is\ in\ words}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00057}00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00058}00058\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00059}00059\ \textcolor{comment}{//\ \ \ <o>Number\ of\ threads\ with\ user-\/provided\ stack\ size\ <0-\/250>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00060}00060\ \textcolor{comment}{//\ \ \ <i>\ Defines\ the\ number\ of\ threads\ with\ user-\/provided\ stack\ size.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00061}00061\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00062}00062\ \textcolor{preprocessor}{\#ifndef\ OS\_PRIVCNT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00063}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a7cfcbf2c4f9d0a63424a2a48592955b1}{00063}}\ \textcolor{preprocessor}{\ \#define\ OS\_PRIVCNT\ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00064}00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00065}00065\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00066}00066\ \textcolor{comment}{//\ \ \ <o>Total\ stack\ size\ [bytes]\ for\ threads\ with\ user-\/provided\ stack\ size\ <0-\/1048576:8><\#/4>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00067}00067\ \textcolor{comment}{//\ \ \ <i>\ Defines\ the\ combined\ stack\ size\ for\ threads\ with\ user-\/provided\ stack\ size.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00068}00068\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00069}00069\ \textcolor{preprocessor}{\#ifndef\ OS\_PRIVSTKSIZE}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00070}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a6e0d30986e4ae0df44f449a4b3b0fbec}{00070}}\ \textcolor{preprocessor}{\ \#define\ OS\_PRIVSTKSIZE\ 0\ \ \ \ \ \ \ }\textcolor{comment}{//\ this\ stack\ size\ value\ is\ in\ words}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00071}00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00072}00072\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00073}00073\ \textcolor{comment}{//\ \ \ <q>Stack\ overflow\ checking}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00074}00074\ \textcolor{comment}{//\ \ \ <i>\ Enable\ stack\ overflow\ checks\ at\ thread\ switch.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00075}00075\ \textcolor{comment}{//\ \ \ <i>\ Enabling\ this\ option\ increases\ slightly\ the\ execution\ time\ of\ a\ thread\ switch.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00076}00076\ \textcolor{preprocessor}{\#ifndef\ OS\_STKCHECK}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00077}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a6ef9e00396f881f0fa9ac877150e5962}{00077}}\ \textcolor{preprocessor}{\ \#define\ OS\_STKCHECK\ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00078}00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00079}00079\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00080}00080\ \textcolor{comment}{//\ \ \ <q>Stack\ usage\ watermark}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00081}00081\ \textcolor{comment}{//\ \ \ <i>\ Initialize\ thread\ stack\ with\ watermark\ pattern\ for\ analyzing\ stack\ usage\ (current/maximum)\ in\ System\ and\ Thread\ Viewer.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00082}00082\ \textcolor{comment}{//\ \ \ <i>\ Enabling\ this\ option\ increases\ significantly\ the\ execution\ time\ of\ osThreadCreate.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00083}00083\ \textcolor{preprocessor}{\#ifndef\ OS\_STKINIT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00084}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ac820623da739e4219ee86f15bdcd9752}{00084}}\ \textcolor{preprocessor}{\#define\ OS\_STKINIT\ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00085}00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00086}00086\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00087}00087\ \textcolor{comment}{//\ \ \ <o>Processor\ mode\ for\ thread\ execution\ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00088}00088\ \textcolor{comment}{//\ \ \ \ \ <0=>\ Unprivileged\ mode\ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00089}00089\ \textcolor{comment}{//\ \ \ \ \ <1=>\ Privileged\ mode}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00090}00090\ \textcolor{comment}{//\ \ \ <i>\ Default:\ Privileged\ mode}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00091}00091\ \textcolor{preprocessor}{\#ifndef\ OS\_RUNPRIV}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00092}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a786924d58be54e943a7e73458cebc51b}{00092}}\ \textcolor{preprocessor}{\ \#define\ OS\_RUNPRIV\ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00093}00093\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00094}00094\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00095}00095\ \textcolor{comment}{//\ </h>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00096}00096\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00097}00097\ \textcolor{comment}{//\ <h>RTX\ Kernel\ Timer\ Tick\ Configuration}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00098}00098\ \textcolor{comment}{//\ ======================================}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00099}00099\ \textcolor{comment}{//\ \ \ <q>\ Use\ Cortex-\/M\ SysTick\ timer\ as\ RTX\ Kernel\ Timer}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00100}00100\ \textcolor{comment}{//\ \ \ <i>\ Cortex-\/M\ processors\ provide\ in\ most\ cases\ a\ SysTick\ timer\ that\ can\ be\ used\ as\ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00101}00101\ \textcolor{comment}{//\ \ \ <i>\ as\ time-\/base\ for\ RTX.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00102}00102\ \textcolor{preprocessor}{\#ifndef\ OS\_SYSTICK}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00103}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a1df397c6989309857ea85e7e26c24361}{00103}}\ \textcolor{preprocessor}{\ \#define\ OS\_SYSTICK\ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00104}00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00105}00105\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00106}00106\ \textcolor{comment}{//\ \ \ <o>RTOS\ Kernel\ Timer\ input\ clock\ frequency\ [Hz]\ <1-\/1000000000>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00107}00107\ \textcolor{comment}{//\ \ \ <i>\ Defines\ the\ input\ frequency\ of\ the\ RTOS\ Kernel\ Timer.\ \ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00108}00108\ \textcolor{comment}{//\ \ \ <i>\ When\ the\ Cortex-\/M\ SysTick\ timer\ is\ used,\ the\ input\ clock\ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00109}00109\ \textcolor{comment}{//\ \ \ <i>\ is\ on\ most\ systems\ identical\ with\ the\ core\ clock.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00110}00110\ \textcolor{preprocessor}{\#ifndef\ OS\_CLOCK}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00111}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9}{00111}}\ \textcolor{preprocessor}{\ \#define\ OS\_CLOCK\ \ \ \ \ \ \ 12000000}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00112}00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00113}00113\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00114}00114\ \textcolor{comment}{//\ \ \ <o>RTX\ Timer\ tick\ interval\ value\ [us]\ <1-\/1000000>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00115}00115\ \textcolor{comment}{//\ \ \ <i>\ The\ RTX\ Timer\ tick\ interval\ value\ is\ used\ to\ calculate\ timeout\ values.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00116}00116\ \textcolor{comment}{//\ \ \ <i>\ When\ the\ Cortex-\/M\ SysTick\ timer\ is\ enabled,\ the\ value\ also\ configures\ the\ SysTick\ timer.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00117}00117\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 1000\ \ (1ms)}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00118}00118\ \textcolor{preprocessor}{\#ifndef\ OS\_TICK}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00119}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc}{00119}}\ \textcolor{preprocessor}{\ \#define\ OS\_TICK\ \ \ \ \ \ \ \ 1000}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00120}00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00121}00121\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00122}00122\ \textcolor{comment}{//\ </h>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00123}00123\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00124}00124\ \textcolor{comment}{//\ <h>System\ Configuration}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00125}00125\ \textcolor{comment}{//\ =======================}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00126}00126\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00127}00127\ \textcolor{comment}{//\ <e>Round-\/Robin\ Thread\ switching}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00128}00128\ \textcolor{comment}{//\ ===============================}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00129}00129\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00130}00130\ \textcolor{comment}{//\ <i>\ Enables\ Round-\/Robin\ Thread\ switching.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00131}00131\ \textcolor{preprocessor}{\#ifndef\ OS\_ROBIN}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00132}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ae34f3058383d9fa9280bbf595618ab0a}{00132}}\ \textcolor{preprocessor}{\ \#define\ OS\_ROBIN\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00133}00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00134}00134\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00135}00135\ \textcolor{comment}{//\ \ \ <o>Round-\/Robin\ Timeout\ [ticks]\ <1-\/1000>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00136}00136\ \textcolor{comment}{//\ \ \ <i>\ Defines\ how\ long\ a\ thread\ will\ execute\ before\ a\ thread\ switch.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00137}00137\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 5}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00138}00138\ \textcolor{preprocessor}{\#ifndef\ OS\_ROBINTOUT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00139}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ad89fdd7232cfba74d400080b6bcc0012}{00139}}\ \textcolor{preprocessor}{\ \#define\ OS\_ROBINTOUT\ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00140}00140\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00141}00141\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00142}00142\ \textcolor{comment}{//\ </e>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00143}00143\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00144}00144\ \textcolor{comment}{//\ <e>User\ Timers}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00145}00145\ \textcolor{comment}{//\ ==============}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00146}00146\ \textcolor{comment}{//\ \ \ <i>\ Enables\ user\ Timers}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00147}00147\ \textcolor{preprocessor}{\#ifndef\ OS\_TIMERS}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00148}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a23b0f1095632e58b5ac0d8f7dcfdfded}{00148}}\ \textcolor{preprocessor}{\ \#define\ OS\_TIMERS\ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00150}00150\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00151}00151\ \textcolor{comment}{//\ \ \ <o>Timer\ Thread\ Priority}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00152}00152\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <1=>\ Low}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00153}00153\ \textcolor{comment}{//\ \ \ \ \ <2=>\ Below\ Normal\ \ <3=>\ Normal\ \ <4=>\ Above\ Normal}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00154}00154\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <5=>\ High}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00155}00155\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <6=>\ Realtime\ (highest)}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00156}00156\ \textcolor{comment}{//\ \ \ <i>\ Defines\ priority\ for\ Timer\ Thread}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00157}00157\ \textcolor{comment}{//\ \ \ <i>\ Default:\ High}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00158}00158\ \textcolor{preprocessor}{\#ifndef\ OS\_TIMERPRIO}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00159}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a90af874f1df4dfb0f8821cc2d860dae6}{00159}}\ \textcolor{preprocessor}{\ \#define\ OS\_TIMERPRIO\ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00160}00160\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00161}00161\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00162}00162\ \textcolor{comment}{//\ \ \ <o>Timer\ Thread\ stack\ size\ [bytes]\ <64-\/4096:8><\#/4>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00163}00163\ \textcolor{comment}{//\ \ \ <i>\ Defines\ stack\ size\ for\ Timer\ thread.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00164}00164\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 200}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00165}00165\ \textcolor{preprocessor}{\#ifndef\ OS\_TIMERSTKSZ}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00166}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a76d1b01799981a753fc528e600015627}{00166}}\ \textcolor{preprocessor}{\ \#define\ OS\_TIMERSTKSZ\ \ 50\ \ \ \ \ }\textcolor{comment}{//\ this\ stack\ size\ value\ is\ in\ words}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00167}00167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00168}00168\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00169}00169\ \textcolor{comment}{//\ \ \ <o>Timer\ Callback\ Queue\ size\ <1-\/32>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00170}00170\ \textcolor{comment}{//\ \ \ <i>\ Number\ of\ concurrent\ active\ timer\ callback\ functions.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00171}00171\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 4}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00172}00172\ \textcolor{preprocessor}{\#ifndef\ OS\_TIMERCBQS}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00173}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a29701cff84a42494279367ad018f252d}{00173}}\ \textcolor{preprocessor}{\ \#define\ OS\_TIMERCBQS\ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00174}00174\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00175}00175\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00176}00176\ \textcolor{comment}{//\ </e>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00177}00177\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00178}00178\ \textcolor{comment}{//\ \ \ <o>ISR\ FIFO\ Queue\ size<4=>\ \ \ 4\ entries\ \ <8=>\ \ \ 8\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00179}00179\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <12=>\ 12\ entries\ \ <16=>\ 16\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00180}00180\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <24=>\ 24\ entries\ \ <32=>\ 32\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00181}00181\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <48=>\ 48\ entries\ \ <64=>\ 64\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00182}00182\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <96=>\ 96\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00183}00183\ \textcolor{comment}{//\ \ \ <i>\ ISR\ functions\ store\ requests\ to\ this\ buffer,}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00184}00184\ \textcolor{comment}{//\ \ \ <i>\ when\ they\ are\ called\ from\ the\ interrupt\ handler.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00185}00185\ \textcolor{comment}{//\ \ \ <i>\ Default:\ 16\ entries}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00186}00186\ \textcolor{preprocessor}{\#ifndef\ OS\_FIFOSZ}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00187}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a93c8e36d441750016f9f72e102f68d66}{00187}}\ \textcolor{preprocessor}{\ \#define\ OS\_FIFOSZ\ \ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00188}00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00189}00189\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00190}00190\ \textcolor{comment}{//\ </h>}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00191}00191\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00192}00192\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ <<<\ end\ of\ configuration\ section\ >>>\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00193}00193\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00194}00194\ \textcolor{comment}{//\ Standard\ library\ system\ mutexes}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00195}00195\ \textcolor{comment}{//\ ===============================}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00196}00196\ \textcolor{comment}{//\ \ Define\ max.\ number\ system\ mutexes\ that\ are\ used\ to\ protect\ }}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00197}00197\ \textcolor{comment}{//\ \ the\ arm\ standard\ runtime\ library.\ For\ microlib\ they\ are\ not\ used.}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00198}00198\ \textcolor{preprocessor}{\#ifndef\ OS\_MUTEXCNT}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00199}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ad11cf133eea28b601f9a63cd9af9b786}{00199}}\ \textcolor{preprocessor}{\ \#define\ OS\_MUTEXCNT\ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00200}00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00201}00201\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00202}00202\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00203}00203\ \textcolor{comment}{\ *\ \ \ \ \ \ RTX\ User\ configuration\ part\ END}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00204}00204\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00205}00205\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00206}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a9d55a070ddb219165bd4287f08318d51}{00206}}\ \textcolor{preprocessor}{\#define\ OS\_TRV\ \ \ \ \ \ \ \ \ \ ((uint32\_t)(((double)OS\_CLOCK*(double)OS\_TICK)/1E6)-\/1)}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00207}00207\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00209}00209\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00210}00210\ \textcolor{comment}{\ *\ \ \ \ \ \ Global\ Functions}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00211}00211\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00212}00212\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00213}00213\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_idle\_demon\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00214}00214\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00215}00215\ \textcolor{comment}{///\ \(\backslash\)brief\ The\ idle\ demon\ is\ running\ when\ no\ other\ thread\ is\ ready\ to\ run}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00216}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_afb4dc4d3dff8343a393726d2860282e4}{00216}}\ \textcolor{comment}{}\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_afb4dc4d3dff8343a393726d2860282e4}{os\_idle\_demon}}\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00217}00217\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00218}00218\ \ \ \textcolor{keywordflow}{for}\ (;;)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00219}00219\ \ \ \ \ \textcolor{comment}{/*\ HERE:\ include\ optional\ user\ code\ to\ be\ executed\ when\ no\ thread\ runs.*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00220}00220\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00222}00222\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00223}00223\ \textcolor{preprocessor}{\#if\ (OS\_SYSTICK\ ==\ 0)\ \ \ }\textcolor{comment}{//\ Functions\ for\ alternative\ timer\ as\ RTX\ kernel\ timer}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00224}00224\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00225}00225\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_tick\_init\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00226}00226\ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00227}00227\ \textcolor{comment}{///\ \(\backslash\)brief\ Initializes\ an\ alternative\ hardware\ timer\ as\ RTX\ kernel\ timer}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00228}00228\ \textcolor{comment}{///\ \(\backslash\)return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IRQ\ number\ of\ the\ alternative\ hardware\ timer}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00229}00229\ \textcolor{comment}{}\textcolor{keywordtype}{int}\ os\_tick\_init\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00230}00230\ \ \ \textcolor{keywordflow}{return}\ (-\/1);\ \ \textcolor{comment}{/*\ Return\ IRQ\ number\ of\ timer\ (0..239)\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00231}00231\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00232}00232\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00233}00233\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_tick\_val\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00234}00234\ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00235}00235\ \textcolor{comment}{///\ \(\backslash\)brief\ Get\ alternative\ hardware\ timer's\ current\ value\ (0\ ..\ OS\_TRV)}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00236}00236\ \textcolor{comment}{///\ \(\backslash\)return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Current\ value\ of\ the\ alternative\ hardware\ timer}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00237}00237\ \textcolor{comment}{}uint32\_t\ os\_tick\_val\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00238}00238\ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00239}00239\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00240}00240\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00241}00241\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_tick\_ovf\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00242}00242\ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00243}00243\ \textcolor{comment}{///\ \(\backslash\)brief\ Get\ alternative\ hardware\ timer's\ \ overflow\ flag}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00244}00244\ \textcolor{comment}{///\ \(\backslash\)return\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Overflow\ flag\(\backslash\)n}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00245}00245\ \textcolor{comment}{///\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ 1\ :\ overflow}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00246}00246\ \textcolor{comment}{///\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\ 0\ :\ no\ overflow}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00247}00247\ \textcolor{comment}{}uint32\_t\ os\_tick\_ovf\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00248}00248\ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00249}00249\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00250}00250\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00251}00251\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_tick\_irqack\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00252}00252\ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00253}00253\ \textcolor{comment}{///\ \(\backslash\)brief\ Acknowledge\ alternative\ hardware\ timer\ interrupt}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00254}00254\ \textcolor{comment}{}\textcolor{keywordtype}{void}\ os\_tick\_irqack\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00255}00255\ \ \ \textcolor{comment}{/*\ ...\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00256}00256\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00257}00257\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00258}00258\ \textcolor{preprocessor}{\#endif\ \ \ }\textcolor{comment}{//\ (OS\_SYSTICK\ ==\ 0)}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00259}00259\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00260}00260\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ os\_error\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00261}00261\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00262}00262\ \textcolor{comment}{/*\ OS\ Error\ Codes\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00263}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d}{00263}}\ \textcolor{preprocessor}{\#define\ OS\_ERROR\_STACK\_OVF\ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00264}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29}{00264}}\ \textcolor{preprocessor}{\#define\ OS\_ERROR\_FIFO\_OVF\ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00265}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10}{00265}}\ \textcolor{preprocessor}{\#define\ OS\_ERROR\_MBX\_OVF\ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00266}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8}{00266}}\ \textcolor{preprocessor}{\#define\ OS\_ERROR\_TIMER\_OVF\ \ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00267}00267\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00268}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a395cca131b7746fc43c104a3485b77f7}{00268}}\ \textcolor{keyword}{extern}\ osThreadId\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a395cca131b7746fc43c104a3485b77f7}{svcThreadGetId}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00269}00269\ \ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00270}00270\ \textcolor{comment}{///\ \(\backslash\)brief\ Called\ when\ a\ runtime\ error\ is\ detected}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00271}00271\ \textcolor{comment}{///\ \(\backslash\)param[in]\ \ \ error\_code\ \ \ actual\ error\ code\ that\ has\ been\ detected}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00272}\mbox{\hyperlink{_r_t_x___conf___c_m_8c_a651ae76b3acf45f80bf0e0487b51d6e6}{00272}}\ \textcolor{comment}{}\textcolor{keywordtype}{void}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a651ae76b3acf45f80bf0e0487b51d6e6}{os\_error}}\ (uint32\_t\ error\_code)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00273}00273\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00274}00274\ \ \ \textcolor{comment}{/*\ HERE:\ include\ optional\ code\ to\ be\ executed\ on\ runtime\ error.\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00275}00275\ \ \ \textcolor{keywordflow}{switch}\ (error\_code)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00276}00276\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d}{OS\_ERROR\_STACK\_OVF}}:}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00277}00277\ \ \ \ \ \ \ \textcolor{comment}{/*\ Stack\ overflow\ detected\ for\ the\ currently\ running\ task.\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00278}00278\ \ \ \ \ \ \ \textcolor{comment}{/*\ Thread\ can\ be\ identified\ by\ calling\ svcThreadGetId().\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00279}00279\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29}{OS\_ERROR\_FIFO\_OVF}}:}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00281}00281\ \ \ \ \ \ \ \textcolor{comment}{/*\ ISR\ FIFO\ Queue\ buffer\ overflow\ detected.\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00282}00282\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10}{OS\_ERROR\_MBX\_OVF}}:}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00284}00284\ \ \ \ \ \ \ \textcolor{comment}{/*\ Mailbox\ overflow\ detected.\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00285}00285\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00286}00286\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8}{OS\_ERROR\_TIMER\_OVF}}:}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00287}00287\ \ \ \ \ \ \ \textcolor{comment}{/*\ User\ Timer\ Callback\ Queue\ overflow\ detected.\ */}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00288}00288\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00290}00290\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00291}00291\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00292}00292\ \ \ \textcolor{keywordflow}{for}\ (;;);}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00293}00293\ \}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00294}00294\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00296}00296\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00297}00297\ \textcolor{comment}{\ *\ \ \ \ \ \ RTX\ Configuration\ Functions}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00298}00298\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00299}00299\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00300}00300\ \textcolor{preprocessor}{\#include\ "{}RTX\_CM\_lib.h"{}}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00301}00301\ \ }
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00302}00302\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00303}00303\ \textcolor{comment}{\ *\ end\ of\ file}}
+\DoxyCodeLine{\Hypertarget{_r_t_x___conf___c_m_8c_source_l00304}00304\ \textcolor{comment}{\ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+
+\end{DoxyCode}

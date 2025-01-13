@@ -1,0 +1,109 @@
+\doxysection{Code/\+Buzzer.c File Reference}
+\hypertarget{_buzzer_8c}{}\label{_buzzer_8c}\index{Code/Buzzer.c@{Code/Buzzer.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}Buzzer.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}{buzzer\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function will initialize the GPIO for the Buzzer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buzzer_8c_a4dd394839cc1e77986c84b3a3679bcd8}{buzzer\+\_\+on}} (void)
+\begin{DoxyCompactList}\small\item\em This function will write high signal to the GPIO and will turn on the buzzer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_buzzer_8c_a93d07c81691fec7a85ea85117d6eca4f}{buzzer\+\_\+off}} (void)
+\begin{DoxyCompactList}\small\item\em This function will write low signal to the GPIO and will turn off the buzzer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\+\_\+gpio}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}\label{_buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd} 
+\index{Buzzer.c@{Buzzer.c}!buzzer\_init@{buzzer\_init}}
+\index{buzzer\_init@{buzzer\_init}!Buzzer.c@{Buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_init()}{buzzer\_init()}}
+{\footnotesize\ttfamily void buzzer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will initialize the GPIO for the Buzzer. 
+
+
+
+Definition at line \mbox{\hyperlink{_buzzer_8c_source_l00007}{7}} of file \mbox{\hyperlink{_buzzer_8c_source}{Buzzer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//enable\ the\ GPIO\ clock}}
+\DoxyCodeLine{00009\ \ \ \ \ \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE();}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \textcolor{comment}{//config\ for\ GPIO\ A15}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\_gpio}}.Pin\ =\ GPIO\_PIN\_15;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\_gpio}}.Mode\ =\ GPIO\_MODE\_OUTPUT\_PP;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\_gpio}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\_gpio}}.Speed\ =\ GPIO\_SPEED\_HIGH;}
+\DoxyCodeLine{00016\ \ \ \ \ HAL\_GPIO\_Init(GPIOA,\ \&\mbox{\hyperlink{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}{sound\_gpio}});}
+\DoxyCodeLine{00017\ \ \ \ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_buzzer_8c_a93d07c81691fec7a85ea85117d6eca4f}\label{_buzzer_8c_a93d07c81691fec7a85ea85117d6eca4f} 
+\index{Buzzer.c@{Buzzer.c}!buzzer\_off@{buzzer\_off}}
+\index{buzzer\_off@{buzzer\_off}!Buzzer.c@{Buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_off()}{buzzer\_off()}}
+{\footnotesize\ttfamily void buzzer\+\_\+off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will write low signal to the GPIO and will turn off the buzzer. 
+
+
+
+Definition at line \mbox{\hyperlink{_buzzer_8c_source_l00026}{26}} of file \mbox{\hyperlink{_buzzer_8c_source}{Buzzer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ GPIO\_PIN\_15,\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_buzzer_8c_a4dd394839cc1e77986c84b3a3679bcd8}\label{_buzzer_8c_a4dd394839cc1e77986c84b3a3679bcd8} 
+\index{Buzzer.c@{Buzzer.c}!buzzer\_on@{buzzer\_on}}
+\index{buzzer\_on@{buzzer\_on}!Buzzer.c@{Buzzer.c}}
+\doxysubsubsection{\texorpdfstring{buzzer\_on()}{buzzer\_on()}}
+{\footnotesize\ttfamily void buzzer\+\_\+on (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will write high signal to the GPIO and will turn on the buzzer. 
+
+
+
+Definition at line \mbox{\hyperlink{_buzzer_8c_source_l00021}{21}} of file \mbox{\hyperlink{_buzzer_8c_source}{Buzzer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOA,\ GPIO\_PIN\_15,\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a}\label{_buzzer_8c_a19dcb210656cc40ebe5ce073aefdfc1a} 
+\index{Buzzer.c@{Buzzer.c}!sound\_gpio@{sound\_gpio}}
+\index{sound\_gpio@{sound\_gpio}!Buzzer.c@{Buzzer.c}}
+\doxysubsubsection{\texorpdfstring{sound\_gpio}{sound\_gpio}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Init\+Type\+Def sound\+\_\+gpio}
+
+
+
+Definition at line \mbox{\hyperlink{_buzzer_8c_source_l00005}{5}} of file \mbox{\hyperlink{_buzzer_8c_source}{Buzzer.\+c}}.
+

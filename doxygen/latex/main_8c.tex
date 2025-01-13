@@ -1,0 +1,207 @@
+\doxysection{Code/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{Code/main.c@{Code/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}relay.\+h"{}}\newline
+{\ttfamily \#include "{}buzzer.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+Touch.\+h"{}}\newline
+{\ttfamily \#include "{}watersensor.\+h"{}}\newline
+{\ttfamily \#include "{}button.\+h"{}}\newline
+{\ttfamily \#include "{}led.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a08d27f452b6ba6c57beae49eaae070e8}{wait\+\_\+delay}}~HAL\+\_\+\+Delay
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{main_8c_a1b00cb85fc6c0f40fabd02701528711d}{HAL\+\_\+\+ADC\+\_\+\+Stop}} (ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}hadc)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_acd9221f1aa19aebfe0b744947f2daf49}{hadc2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_a08d27f452b6ba6c57beae49eaae070e8}\label{main_8c_a08d27f452b6ba6c57beae49eaae070e8} 
+\index{main.c@{main.c}!wait\_delay@{wait\_delay}}
+\index{wait\_delay@{wait\_delay}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{wait\_delay}{wait\_delay}}
+{\footnotesize\ttfamily \#define wait\+\_\+delay~HAL\+\_\+\+Delay}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00011}{11}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1b00cb85fc6c0f40fabd02701528711d}\label{main_8c_a1b00cb85fc6c0f40fabd02701528711d} 
+\index{main.c@{main.c}!HAL\_ADC\_Stop@{HAL\_ADC\_Stop}}
+\index{HAL\_ADC\_Stop@{HAL\_ADC\_Stop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_Stop()}{HAL\_ADC\_Stop()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def HAL\+\_\+\+ADC\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def \texorpdfstring{$\ast$}{*}}]{hadc }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00027}{27}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{char}\ msg[128];}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{comment}{//configure\ system's\ clock,\ RCC\ and\ HAL}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ RCC\_OscInitTypeDef\ RCC\_OscInitStruct;}
+\DoxyCodeLine{00033\ \ \ \ \ RCC\_ClkInitTypeDef\ RCC\_ClkInitStruct;}
+\DoxyCodeLine{00034\ \ \ \ \ \_\_HAL\_RCC\_PWR\_CLK\_ENABLE();}
+\DoxyCodeLine{00035\ \ \ \ \ \_\_HAL\_PWR\_VOLTAGESCALING\_CONFIG(PWR\_REGULATOR\_VOLTAGE\_SCALE1);}
+\DoxyCodeLine{00036\ \ \ \ \ RCC\_OscInitStruct.OscillatorType\ =\ RCC\_OSCILLATORTYPE\_HSE;}
+\DoxyCodeLine{00037\ \ \ \ \ RCC\_OscInitStruct.HSEState\ =\ RCC\_HSE\_ON;}
+\DoxyCodeLine{00038\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLState\ =\ RCC\_PLL\_ON;}
+\DoxyCodeLine{00039\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLSource\ =\ RCC\_PLLSOURCE\_HSE;}
+\DoxyCodeLine{00040\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLM\ =\ 25;}
+\DoxyCodeLine{00041\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLN\ =\ 336;}
+\DoxyCodeLine{00042\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLP\ =\ RCC\_PLLP\_DIV2;}
+\DoxyCodeLine{00043\ \ \ \ \ RCC\_OscInitStruct.PLL.PLLQ\ =\ 7;}
+\DoxyCodeLine{00044\ \ \ \ \ HAL\_RCC\_OscConfig(\&RCC\_OscInitStruct);}
+\DoxyCodeLine{00045\ \ \ \ \ RCC\_ClkInitStruct.ClockType\ =\ RCC\_CLOCKTYPE\_SYSCLK\ |}
+\DoxyCodeLine{00046\ \ \ \ \ RCC\_CLOCKTYPE\_PCLK1\ |\ RCC\_CLOCKTYPE\_PCLK2;}
+\DoxyCodeLine{00047\ \ \ \ \ RCC\_ClkInitStruct.SYSCLKSource\ =\ RCC\_SYSCLKSOURCE\_PLLCLK;}
+\DoxyCodeLine{00048\ \ \ \ \ RCC\_ClkInitStruct.AHBCLKDivider\ =\ RCC\_SYSCLK\_DIV1;}
+\DoxyCodeLine{00049\ \ \ \ \ RCC\_ClkInitStruct.APB1CLKDivider\ =\ RCC\_HCLK\_DIV4;}
+\DoxyCodeLine{00050\ \ \ \ \ RCC\_ClkInitStruct.APB2CLKDivider\ =\ RCC\_HCLK\_DIV2;}
+\DoxyCodeLine{00051\ \ \ \ \ HAL\_RCC\_ClockConfig(\&RCC\_ClkInitStruct,\ FLASH\_LATENCY\_5);}
+\DoxyCodeLine{00052\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//configure\ hadc\ }}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Instance\ =\ ADC1;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.ClockPrescaler\ =\ ADC\_CLOCK\_SYNC\_PCLK\_DIV2;}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.Resolution\ =\ ADC\_RESOLUTION\_10B;}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.DataAlign\ =\ ADC\_DATAALIGN\_RIGHT;}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.NbrOfConversion\ =\ 1;}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.ScanConvMode\ =\ ENABLE;}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.ContinuousConvMode\ =\ DISABLE;}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}.Init.DiscontinuousConvMode\ =\ ENABLE;}
+\DoxyCodeLine{00062\ \ \ \ \ HAL\_ADC\_Init(\&\mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}});}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{comment}{//int\ GLCD\ and\ touch\ screen\ }}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{00066\ \ \ \ \ Touch\_Initialize();}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ HAL\_Init();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//initializing\ the\ system\ clock,\ channel\ and\ the\ GPIO\ for\ Water\ Sensor}}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{watersensor_8c_a1ec041eb34ae204a97f5bece1ae1ebb3}{water\_Config}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//initializing\ the\ relay}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_a8ff304ac775b3097edffa200e58bcc21}{relay\_init}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{comment}{//initializing\ the\ buzzer}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a0cead532fdd0c0de5fa1c1de0f6556bd}{buzzer\_init}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{comment}{//set\ the\ background\ of\ the\ GLCD\ screen\ to\ white}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \mbox{\hyperlink{_g_l_c_d_8c_ae337c54455498be844834467d395f345}{backgroundColor}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{comment}{//displaying\ the\ home\ page\ at\ the\ start}}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8}{homePage}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//init\ LED}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{led_8c_a7fa7a4faf20806beec21aefd1f07b869}{led\_GPIO\_Init}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//init\ button}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{button_8c_a201e1da8cf81a1dae1d2dd3fa863f60a}{button\_GPIO\_Init}}();}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//main\ loop}}
+\DoxyCodeLine{00086\ \ \ \ \textcolor{keywordflow}{while}(1)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ touchFlag;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TOUCH\_STATE\ tsc\_state;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//read\ ADC\ value}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ uint16\_t\ water\_adc\_read;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ uint16\_t\ button\_val\ =\ 0;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//start\ ADC\ conversion}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ HAL\_ADC\_Start(\&\mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}});}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HAL\_ADC\_PollForConversion(\&\mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}},\ HAL\_MAX\_DELAY);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ water\_adc\_read\ =\ HAL\_ADC\_GetValue(\&\mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}});\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\ a\ flag\ when\ the\ screen\ is\ touched}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Touch\_GetState(\&tsc\_state);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tsc\_state.pressed)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ touchFlag\ =\ 1;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//main\ water\ reading\ loop}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (touchFlag\ ==\ 1)\ \{\ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74}{readingPage}}();\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (touchFlag\ ==\ 1\ \&\&\ water\_adc\_read\ >\ 500)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(msg,\textcolor{stringliteral}{"{}Water\ pump\ is\ off"{}});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GLCD\_DrawString(20,\ 120,msg);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(msg,\textcolor{stringliteral}{"{}Water\ is\ detected"{}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ GLCD\_DrawString(20,\ 80,\ msg);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a}{relay\_off}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a93d07c81691fec7a85ea85117d6eca4f}{buzzer\_off}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{led_8c_a501391b8794d0beaeaf0dea7a3bdbbb3}{led\_off}}();\ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(msg,\ \textcolor{stringliteral}{"{}Water\ pump\ is\ on"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GLCD\_DrawString(20,\ 120,msg);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sprintf(msg,\ \textcolor{stringliteral}{"{}Water\ is\ not\ detected"{}});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ GLCD\_DrawString(20,\ 80,\ msg);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_a798fc156480f5feea1a9e83d6848dfea}{relay\_on}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a4dd394839cc1e77986c84b3a3679bcd8}{buzzer\_on}}();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{led_8c_ab0e7ace9bcd558be2a27be680621d3eb}{led\_on}}();}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//manual\ button\ loop}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ button\_val\ =\ HAL\_GPIO\_ReadPin(GPIOC,GPIO\_PIN\_6);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button\_val\ ==\ 0)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_a798fc156480f5feea1a9e83d6848dfea}{relay\_on}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{led_8c_ab0e7ace9bcd558be2a27be680621d3eb}{led\_on}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_buzzer_8c_a4dd394839cc1e77986c84b3a3679bcd8}{buzzer\_on}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a08d27f452b6ba6c57beae49eaae070e8}{wait\_delay}}(500);\ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a22b804736f5648d52f639b2647d4ed13}\label{main_8c_a22b804736f5648d52f639b2647d4ed13} 
+\index{main.c@{main.c}!hadc1@{hadc1}}
+\index{hadc1@{hadc1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hadc1}{hadc1}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00022}{22}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+
+\Hypertarget{main_8c_acd9221f1aa19aebfe0b744947f2daf49}\label{main_8c_acd9221f1aa19aebfe0b744947f2daf49} 
+\index{main.c@{main.c}!hadc2@{hadc2}}
+\index{hadc2@{hadc2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hadc2}{hadc2}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc2}
+
+
+
+Definition at line \mbox{\hyperlink{main_8c_source_l00023}{23}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
+

@@ -1,0 +1,572 @@
+\doxysection{stm32f7xx\+\_\+hal\+\_\+conf.\+h}
+\hypertarget{stm32f7xx__hal__conf_8h_source}{}\label{stm32f7xx__hal__conf_8h_source}\index{Code/RTE/Device/STM32F746NGHx/stm32f7xx\_hal\_conf.h@{Code/RTE/Device/STM32F746NGHx/stm32f7xx\_hal\_conf.h}}
+\mbox{\hyperlink{stm32f7xx__hal__conf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00001}00001\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00002}00002\ \textcolor{comment}{\ \ ******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ @file\ \ \ \ stm32f7xx\_hal\_conf.h}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ @author\ \ MCD\ Application\ Team}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ @brief\ \ \ HAL\ configuration\ file}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00006}00006\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ @note\ \ \ \ modified\ by\ ARM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ The\ modifications\ allow\ to\ use\ this\ file\ as\ User\ Code\ Template}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ within\ the\ Device\ Family\ Pack.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00010}00010\ \textcolor{comment}{\ \ ******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ @attention}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00012}00012\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ <h2><center>\&copy;\ COPYRIGHT(c)\ 2016-\/2018\ STMicroelectronics</center></h2>}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00014}00014\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without\ modification,}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ \ \ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ \ \ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ \ \ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00021}00021\ \textcolor{comment}{\ \ *\ \ \ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00022}00022\ \textcolor{comment}{\ \ *\ \ \ 3.\ Neither\ the\ name\ of\ STMicroelectronics\ nor\ the\ names\ of\ its\ contributors}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00023}00023\ \textcolor{comment}{\ \ *\ \ \ \ \ \ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived\ from\ this\ software}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00024}00024\ \textcolor{comment}{\ \ *\ \ \ \ \ \ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00025}00025\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00026}00026\ \textcolor{comment}{\ \ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00027}00027\ \textcolor{comment}{\ \ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00028}00028\ \textcolor{comment}{\ \ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ ARE}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00029}00029\ \textcolor{comment}{\ \ *\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE\ LIABLE}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00030}00030\ \textcolor{comment}{\ \ *\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00031}00031\ \textcolor{comment}{\ \ *\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00032}00032\ \textcolor{comment}{\ \ *\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00033}00033\ \textcolor{comment}{\ \ *\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00034}00034\ \textcolor{comment}{\ \ *\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00035}00035\ \textcolor{comment}{\ \ *\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00036}00036\ \textcolor{comment}{\ \ *}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00037}00037\ \textcolor{comment}{\ \ ******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00038}00038\ \textcolor{comment}{\ \ */}\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00040}00040\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00041}00041\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F7xx\_HAL\_CONF\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00042}00042\ \textcolor{preprocessor}{\#define\ \_\_STM32F7xx\_HAL\_CONF\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00044}00044\ \textcolor{preprocessor}{\#ifdef\ \_RTE\_}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_t_e___components_8h}{RTE\_Components.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Component\ selection}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00046}00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00048}00048\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00049}00049\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00050}00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00052}00052\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00053}00053\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00055}00055\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Module\ Selection\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00056}00056\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00057}00057\ \textcolor{comment}{\ \ *\ @brief\ This\ is\ the\ list\ of\ modules\ to\ be\ used\ in\ the\ HAL\ driver\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00058}00058\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00059}00059\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_COMMON}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ HAL\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00061}00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00062}00062\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_ADC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00063}00063\ \textcolor{preprocessor}{\#define\ HAL\_ADC\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00064}00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00065}00065\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_CAN}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00066}00066\ \textcolor{preprocessor}{\#define\ HAL\_CAN\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00067}00067\ \textcolor{comment}{/*\ \#define\ HAL\_CAN\_LEGACY\_MODULE\_ENABLED\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00068}00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00069}00069\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_CEC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ HAL\_CEC\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00071}00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00072}00072\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_CRC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00073}00073\ \textcolor{preprocessor}{\#define\ HAL\_CRC\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00074}00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00075}00075\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_CRYP}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00076}00076\ \textcolor{preprocessor}{\#define\ HAL\_CRYP\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00077}00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00078}00078\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DAC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00079}00079\ \textcolor{preprocessor}{\#define\ HAL\_DAC\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00080}00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00081}00081\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DCMI}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00082}00082\ \textcolor{preprocessor}{\#define\ HAL\_DCMI\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00083}00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00084}00084\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DMA}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00085}00085\ \textcolor{preprocessor}{\#define\ HAL\_DMA\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00086}00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00087}00087\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DMA2D}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00088}00088\ \textcolor{preprocessor}{\#define\ HAL\_DMA2D\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00089}00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00090}00090\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_ETH}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00091}00091\ \textcolor{preprocessor}{\#define\ HAL\_ETH\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00092}00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00093}00093\ \textcolor{preprocessor}{\#if\ defined\ (RTE\_DEVICE\_HAL\_FLASH)\ ||\ defined\ (RTE\_DEVICE\_HAL\_COMMON)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00094}00094\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00095}00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00096}00096\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_NAND}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00097}00097\ \textcolor{preprocessor}{\#define\ HAL\_NAND\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00098}00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00099}00099\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_NOR}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00100}00100\ \textcolor{preprocessor}{\#define\ HAL\_NOR\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00102}00102\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SRAM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00103}00103\ \textcolor{preprocessor}{\#define\ HAL\_SRAM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00105}00105\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SDRAM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00106}00106\ \textcolor{preprocessor}{\#define\ HAL\_SDRAM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00107}00107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00108}00108\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_HASH}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00109}00109\ \textcolor{preprocessor}{\#define\ HAL\_HASH\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00110}00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00111}00111\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_GPIO}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ HAL\_GPIO\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00113}00113\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00114}00114\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_I2C}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00115}00115\ \textcolor{preprocessor}{\#define\ HAL\_I2C\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00116}00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00117}00117\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_I2S}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00118}00118\ \textcolor{preprocessor}{\#define\ HAL\_I2S\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00119}00119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00120}00120\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_IWDG}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00121}00121\ \textcolor{preprocessor}{\#define\ HAL\_IWDG\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00122}00122\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00123}00123\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_LPTIM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00124}00124\ \textcolor{preprocessor}{\#define\ HAL\_LPTIM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00125}00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00126}00126\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_LTDC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00127}00127\ \textcolor{preprocessor}{\#define\ HAL\_LTDC\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00128}00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00129}00129\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_PWR}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00130}00130\ \textcolor{preprocessor}{\#define\ HAL\_PWR\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00131}00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00132}00132\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_QSPI}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00133}00133\ \textcolor{preprocessor}{\#define\ HAL\_QSPI\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00134}00134\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00135}00135\ \textcolor{preprocessor}{\#if\ defined\ RTE\_DEVICE\_HAL\_RCC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00136}00136\ \textcolor{preprocessor}{\#define\ HAL\_RCC\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00137}00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00138}00138\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_RNG}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00139}00139\ \textcolor{preprocessor}{\#define\ HAL\_RNG\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00140}00140\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00141}00141\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_RTC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00142}00142\ \textcolor{preprocessor}{\#define\ HAL\_RTC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00143}00143\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00144}00144\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SAI}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00145}00145\ \textcolor{preprocessor}{\#define\ HAL\_SAI\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00146}00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00147}00147\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SD}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00148}00148\ \textcolor{preprocessor}{\#define\ HAL\_SD\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00150}00150\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SPDIFRX}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00151}00151\ \textcolor{preprocessor}{\#define\ HAL\_SPDIFRX\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00152}00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00153}00153\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SPI}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00154}00154\ \textcolor{preprocessor}{\#define\ HAL\_SPI\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00155}00155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00156}00156\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_TIM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00157}00157\ \textcolor{preprocessor}{\#define\ HAL\_TIM\_MODULE\_ENABLED\ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00158}00158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00159}00159\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_UART}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00160}00160\ \textcolor{preprocessor}{\#define\ HAL\_UART\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00161}00161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00162}00162\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_USART}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00163}00163\ \textcolor{preprocessor}{\#define\ HAL\_USART\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00164}00164\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00165}00165\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_IRDA}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00166}00166\ \textcolor{preprocessor}{\#define\ HAL\_IRDA\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00167}00167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00168}00168\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SMARTCARD}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00169}00169\ \textcolor{preprocessor}{\#define\ HAL\_SMARTCARD\_MODULE\_ENABLED\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00170}00170\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00171}00171\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_WWDG}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00172}00172\ \textcolor{preprocessor}{\#define\ HAL\_WWDG\_MODULE\_ENABLED\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00173}00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00174}00174\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_CORTEX}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00175}00175\ \textcolor{preprocessor}{\#define\ HAL\_CORTEX\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00176}00176\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00177}00177\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_PCD}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00178}00178\ \textcolor{preprocessor}{\#define\ HAL\_PCD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00179}00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00180}00180\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_HCD}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00181}00181\ \textcolor{preprocessor}{\#define\ HAL\_HCD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00182}00182\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00183}00183\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DFSDM}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00184}00184\ \textcolor{preprocessor}{\#define\ HAL\_DFSDM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00185}00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00186}00186\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_DSI}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00187}00187\ \textcolor{preprocessor}{\#define\ HAL\_DSI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00188}00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00189}00189\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_JPEG}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00190}00190\ \textcolor{preprocessor}{\#define\ HAL\_JPEG\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00191}00191\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00192}00192\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_MDIOS}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00193}00193\ \textcolor{preprocessor}{\#define\ HAL\_MDIOS\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00194}00194\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00195}00195\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_SMBUS}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00196}00196\ \textcolor{preprocessor}{\#define\ HAL\_SMBUS\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00197}00197\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00198}00198\ \textcolor{preprocessor}{\#ifdef\ RTE\_DEVICE\_HAL\_MMC}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00199}00199\ \textcolor{preprocessor}{\#define\ HAL\_MMC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00200}00200\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00203}00203\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ HSE/HSI\ Values\ adaptation\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00204}00204\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00205}00205\ \textcolor{comment}{\ \ *\ @brief\ Adjust\ the\ value\ of\ External\ High\ Speed\ oscillator\ (HSE)\ used\ in\ your\ application.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00206}00206\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ This\ value\ is\ used\ by\ the\ RCC\ HAL\ module\ to\ compute\ the\ system\ frequency}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00207}00207\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ (when\ HSE\ is\ used\ as\ system\ clock\ source,\ directly\ or\ through\ the\ PLL).\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00208}00208\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00209}00209\ \textcolor{preprocessor}{\#if\ !defined\ \ (HSE\_VALUE)\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00210}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aeafcff4f57440c60e64812dddd13e7cb}{00210}}\ \textcolor{preprocessor}{\ \ \#define\ HSE\_VALUE\ \ \ \ ((uint32\_t)25000000)\ }\textcolor{comment}{/*!<\ Value\ of\ the\ External\ oscillator\ in\ Hz\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00211}00211\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HSE\_VALUE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00213}00213\ \textcolor{preprocessor}{\#if\ !defined\ \ (HSE\_STARTUP\_TIMEOUT)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00214}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a68ecbc9b0a1a40a1ec9d18d5e9747c4f}{00214}}\ \textcolor{preprocessor}{\ \ \#define\ HSE\_STARTUP\_TIMEOUT\ \ \ \ ((uint32\_t)100U)\ \ \ }\textcolor{comment}{/*!<\ Time\ out\ for\ HSE\ start\ up,\ in\ ms\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00215}00215\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HSE\_STARTUP\_TIMEOUT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00216}00216\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00217}00217\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00218}00218\ \textcolor{comment}{\ \ *\ @brief\ Internal\ High\ Speed\ oscillator\ (HSI)\ value.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00219}00219\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ This\ value\ is\ used\ by\ the\ RCC\ HAL\ module\ to\ compute\ the\ system\ frequency}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00220}00220\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ (when\ HSI\ is\ used\ as\ system\ clock\ source,\ directly\ or\ through\ the\ PLL).\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00221}00221\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00222}00222\ \textcolor{preprocessor}{\#if\ !defined\ \ (HSI\_VALUE)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00223}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{00223}}\ \textcolor{preprocessor}{\ \ \#define\ HSI\_VALUE\ \ \ \ ((uint32\_t)16000000)\ }\textcolor{comment}{/*!<\ Value\ of\ the\ Internal\ oscillator\ in\ Hz*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00224}00224\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HSI\_VALUE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00225}00225\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00226}00226\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00227}00227\ \textcolor{comment}{\ \ *\ @brief\ Internal\ Low\ Speed\ oscillator\ (LSI)\ value.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00228}00228\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00229}00229\ \textcolor{preprocessor}{\#if\ !defined\ \ (LSI\_VALUE)\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00230}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4872023e65449c0506aac3ea6bec99e9}{00230}}\ \textcolor{preprocessor}{\ \#define\ LSI\_VALUE\ \ ((uint32\_t)32000)\ \ \ \ \ \ \ }\textcolor{comment}{/*!<\ LSI\ Typical\ Value\ in\ Hz*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00231}00231\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LSI\_VALUE\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*!<\ Value\ of\ the\ Internal\ Low\ Speed\ oscillator\ in\ Hz}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00232}00232\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The\ real\ value\ may\ vary\ depending\ on\ the\ variations}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in\ voltage\ and\ temperature.\ \ */}\textcolor{preprocessor}{}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00234}00234\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00235}00235\ \textcolor{comment}{\ \ *\ @brief\ External\ Low\ Speed\ oscillator\ (LSE)\ value.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00236}00236\ \textcolor{comment}{\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00237}00237\ \textcolor{preprocessor}{\#if\ !defined\ \ (LSE\_VALUE)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00238}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{00238}}\ \textcolor{preprocessor}{\ \#define\ LSE\_VALUE\ \ ((uint32\_t)32768)\ \ \ \ }\textcolor{comment}{/*!<\ Value\ of\ the\ External\ Low\ Speed\ oscillator\ in\ Hz\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00239}00239\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LSE\_VALUE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00240}00240\ \textcolor{preprocessor}{\#if\ !defined\ \ (LSE\_STARTUP\_TIMEOUT)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00241}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a85e6fc812dc26f7161a04be2568a5462}{00241}}\ \textcolor{preprocessor}{\ \ \#define\ LSE\_STARTUP\_TIMEOUT\ \ \ \ ((uint32\_t)5000U)\ \ \ }\textcolor{comment}{/*!<\ Time\ out\ for\ LSE\ start\ up,\ in\ ms\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00242}00242\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LSE\_STARTUP\_TIMEOUT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00243}00243\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00244}00244\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00245}00245\ \textcolor{comment}{\ \ *\ @brief\ External\ clock\ source\ for\ I2S\ peripheral}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00246}00246\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ This\ value\ is\ used\ by\ the\ I2S\ HAL\ module\ to\ compute\ the\ I2S\ clock\ source\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00247}00247\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ frequency,\ this\ source\ is\ inserted\ directly\ through\ I2S\_CKIN\ pad.\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00248}00248\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00249}00249\ \textcolor{preprocessor}{\#if\ !defined\ \ (EXTERNAL\_CLOCK\_VALUE)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00250}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a8c47c935e91e70569098b41718558648}{00250}}\ \textcolor{preprocessor}{\ \ \#define\ EXTERNAL\_CLOCK\_VALUE\ \ \ \ ((uint32\_t)12288000)\ }\textcolor{comment}{/*!<\ Value\ of\ the\ Internal\ oscillator\ in\ Hz*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00251}00251\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EXTERNAL\_CLOCK\_VALUE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00253}00253\ \textcolor{comment}{/*\ Tip:\ To\ avoid\ modifying\ this\ file\ each\ time\ you\ need\ to\ use\ different\ HSE,}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00254}00254\ \textcolor{comment}{\ \ \ ===\ \ you\ can\ define\ the\ HSE\ value\ in\ your\ toolchain\ compiler\ preprocessor.\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00256}00256\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ System\ Configuration\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00257}00257\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00258}00258\ \textcolor{comment}{\ \ *\ @brief\ This\ is\ the\ HAL\ system\ configuration\ section}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00259}00259\ \textcolor{comment}{\ \ */}\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00260}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aae550dad9f96d52cfce5e539adadbbb4}{00260}}\ \textcolor{preprocessor}{\#define\ \ VDD\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)3300U)\ }\textcolor{comment}{/*!<\ Value\ of\ VDD\ in\ mv\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00261}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ae27809d4959b9fd5b5d974e3e1c77d2e}{00261}}\ \textcolor{preprocessor}{\#define\ \ TICK\_INT\_PRIORITY\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0FU)\ }\textcolor{comment}{/*!<\ tick\ interrupt\ priority\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00262}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ad048ac737242c2c2cb9f4a72953d10ce}{00262}}\ \textcolor{preprocessor}{\#define\ \ USE\_RTOS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00263}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a13fc0d5e7bb925385c0cc0772ba6a391}{00263}}\ \textcolor{preprocessor}{\#define\ \ PREFETCH\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00264}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ad4f244bb072824467a04794d57694389}{00264}}\ \textcolor{preprocessor}{\#define\ \ ART\_ACCLERATOR\_ENABLE\ \ \ \ \ \ \ \ 1U\ }\textcolor{comment}{/*\ To\ enable\ instruction\ cache\ and\ prefetch\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00266}00266\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Assert\ Selection\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00267}00267\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00268}00268\ \textcolor{comment}{\ \ *\ @brief\ Uncomment\ the\ line\ below\ to\ expanse\ the\ "{}assert\_param"{}\ macro\ in\ the\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00269}00269\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ HAL\ drivers\ code}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00270}00270\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00271}00271\ \textcolor{comment}{/*\ \#define\ USE\_FULL\_ASSERT\ \ \ \ 1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00273}00273\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Ethernet\ peripheral\ configuration\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00275}00275\ \textcolor{comment}{/*\ Section\ 1\ :\ Ethernet\ peripheral\ configuration\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00277}00277\ \textcolor{comment}{/*\ MAC\ ADDRESS:\ MAC\_ADDR0:MAC\_ADDR1:MAC\_ADDR2:MAC\_ADDR3:MAC\_ADDR4:MAC\_ADDR5\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00278}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ab84a2e15d360e2644ada09641513a941}{00278}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR0\ \ \ 2U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00279}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a8d14266d76690c530bee01e7e5bb4099}{00279}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR1\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00280}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a6c5df15bec1d305ed033ad9a85ec803d}{00280}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR2\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00281}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a08a36ede83ae67498aecf54676be8fc8}{00281}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR3\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00282}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a41e5cb0b39ad74f0aafb83dbcecf9006}{00282}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR4\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00283}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a3bcc92663c42ec434f527847bbc4abc1}{00283}}\ \textcolor{preprocessor}{\#define\ MAC\_ADDR5\ \ \ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00285}00285\ \textcolor{comment}{/*\ Definition\ of\ the\ Ethernet\ driver\ buffers\ size\ and\ count\ */}\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00286}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a0cdaf687f7a7f2dba570d5a722990786}{00286}}\ \textcolor{preprocessor}{\#define\ ETH\_RX\_BUF\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ETH\_MAX\_PACKET\_SIZE\ }\textcolor{comment}{/*\ buffer\ size\ for\ receive\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00287}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_af83956dfc1b135c3c92ac409758b6cf4}{00287}}\ \textcolor{preprocessor}{\#define\ ETH\_TX\_BUF\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ETH\_MAX\_PACKET\_SIZE\ }\textcolor{comment}{/*\ buffer\ size\ for\ transmit\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00288}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a62b0f224fa9c4f2e5574c9e52526f751}{00288}}\ \textcolor{preprocessor}{\#define\ ETH\_RXBUFNB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)4U)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ 4\ Rx\ buffers\ of\ size\ ETH\_RX\_BUF\_SIZE\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00289}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4ad07ad8fa6f8639ab8ef362390d86c7}{00289}}\ \textcolor{preprocessor}{\#define\ ETH\_TXBUFNB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)4U)\ \ \ \ \ \ \ }\textcolor{comment}{/*\ 4\ Tx\ buffers\ of\ size\ ETH\_TX\_BUF\_SIZE\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00291}00291\ \textcolor{comment}{/*\ Section\ 2:\ PHY\ configuration\ section\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00293}00293\ \textcolor{comment}{/*\ DP83848\ PHY\ Address*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00294}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a25f014091aaba92bdd9d95d0b2f00503}{00294}}\ \textcolor{preprocessor}{\#define\ DP83848\_PHY\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x01U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00295}00295\ \textcolor{comment}{/*\ PHY\ Reset\ delay\ these\ values\ are\ based\ on\ a\ 1\ ms\ Systick\ interrupt*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00296}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a0ede6087f7b71403bcddb5d3a8f47ff4}{00296}}\ \textcolor{preprocessor}{\#define\ PHY\_RESET\_DELAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x000000FFU)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00297}00297\ \textcolor{comment}{/*\ PHY\ Configuration\ delay\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00298}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_abba7114255a2a41b81fdcb2a3702c270}{00298}}\ \textcolor{preprocessor}{\#define\ PHY\_CONFIG\_DELAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000FFFU)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00300}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a9d356ada86535630c403690bef0fb887}{00300}}\ \textcolor{preprocessor}{\#define\ PHY\_READ\_TO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000FFFFU)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00301}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a474bf13e28d09b667e41b151140ee39d}{00301}}\ \textcolor{preprocessor}{\#define\ PHY\_WRITE\_TO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000FFFFU)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00303}00303\ \textcolor{comment}{/*\ Section\ 3:\ Common\ PHY\ Registers\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00305}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a8abe1a40c71e68881ec669d59f513fdb}{00305}}\ \textcolor{preprocessor}{\#define\ PHY\_BCR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x00U)\ \ \ \ }\textcolor{comment}{/*!<\ Transceiver\ Basic\ Control\ Register\ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00306}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4b8f2c29a9e74412395e1b1809666838}{00306}}\ \textcolor{preprocessor}{\#define\ PHY\_BSR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x01U)\ \ \ \ }\textcolor{comment}{/*!<\ Transceiver\ Basic\ Status\ Register\ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00307}00307\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00308}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a6f5048620b3dde8583f7f1118e9de187}{00308}}\ \textcolor{preprocessor}{\#define\ PHY\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x8000U)\ \ }\textcolor{comment}{/*!<\ PHY\ Reset\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00309}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a7833d885caa7e29abbebfb90a4b96f86}{00309}}\ \textcolor{preprocessor}{\#define\ PHY\_LOOPBACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x4000U)\ \ }\textcolor{comment}{/*!<\ Select\ loop-\/back\ mode\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00310}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a5729771244f68779fc694ba819cd60a5}{00310}}\ \textcolor{preprocessor}{\#define\ PHY\_FULLDUPLEX\_100M\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x2100U)\ \ }\textcolor{comment}{/*!<\ Set\ the\ full-\/duplex\ mode\ at\ 100\ Mb/s\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00311}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a1ac901a4ad405241d90a5c10104b8986}{00311}}\ \textcolor{preprocessor}{\#define\ PHY\_HALFDUPLEX\_100M\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x2000U)\ \ }\textcolor{comment}{/*!<\ Set\ the\ half-\/duplex\ mode\ at\ 100\ Mb/s\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00312}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a6b6254fd3dacbf1578a9d8058cd86373}{00312}}\ \textcolor{preprocessor}{\#define\ PHY\_FULLDUPLEX\_10M\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0100U)\ \ }\textcolor{comment}{/*!<\ Set\ the\ full-\/duplex\ mode\ at\ 10\ Mb/s\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00313}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4fa7ca6faf60ee074576ebb6103f8dd4}{00313}}\ \textcolor{preprocessor}{\#define\ PHY\_HALFDUPLEX\_10M\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000U)\ \ }\textcolor{comment}{/*!<\ Set\ the\ half-\/duplex\ mode\ at\ 10\ Mb/s\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00314}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a9b7f5c8f71047ee449f21562d26b1b43}{00314}}\ \textcolor{preprocessor}{\#define\ PHY\_AUTONEGOTIATION\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x1000U)\ \ }\textcolor{comment}{/*!<\ Enable\ auto-\/negotiation\ function\ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00315}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a66c4b69bd08dc25b6730365d3ff740c9}{00315}}\ \textcolor{preprocessor}{\#define\ PHY\_RESTART\_AUTONEGOTIATION\ \ \ \ \ ((uint16\_t)0x0200U)\ \ }\textcolor{comment}{/*!<\ Restart\ auto-\/negotiation\ function\ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00316}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aa0b1e6d4a23470fc1ac4f9222b51f8a0}{00316}}\ \textcolor{preprocessor}{\#define\ PHY\_POWERDOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0800U)\ \ }\textcolor{comment}{/*!<\ Select\ the\ power\ down\ mode\ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00317}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a7d5233295134a385866eb5bdafe2162b}{00317}}\ \textcolor{preprocessor}{\#define\ PHY\_ISOLATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0400U)\ \ }\textcolor{comment}{/*!<\ Isolate\ PHY\ from\ MII\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00319}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a36c4dbd5f6df1f5eaefa010929ef9773}{00319}}\ \textcolor{preprocessor}{\#define\ PHY\_AUTONEGO\_COMPLETE\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0020U)\ \ }\textcolor{comment}{/*!<\ Auto-\/Negotiation\ process\ completed\ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00320}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ace209074499dbef0b97300da5bd7c707}{00320}}\ \textcolor{preprocessor}{\#define\ PHY\_LINKED\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004U)\ \ }\textcolor{comment}{/*!<\ Valid\ link\ established\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00321}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a057b4d3fb66548d65c291a5b41611be2}{00321}}\ \textcolor{preprocessor}{\#define\ PHY\_JABBER\_DETECTION\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002U)\ \ }\textcolor{comment}{/*!<\ Jabber\ condition\ detected\ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00322}00322\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00323}00323\ \textcolor{comment}{/*\ Section\ 4:\ Extended\ PHY\ Registers\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00325}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a32b55e84d27cf298a77f54b133cd1acc}{00325}}\ \textcolor{preprocessor}{\#define\ PHY\_SR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x10U)\ \ \ \ }\textcolor{comment}{/*!<\ PHY\ status\ register\ Offset\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00326}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ac4d8c2e6c2509a9bdaf214b24deafea7}{00326}}\ \textcolor{preprocessor}{\#define\ PHY\_MICR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x11U)\ \ \ \ }\textcolor{comment}{/*!<\ MII\ Interrupt\ Control\ Register\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00327}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a81d36e97e4a9da33f2a7e142b01964f6}{00327}}\ \textcolor{preprocessor}{\#define\ PHY\_MISR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x12U)\ \ \ \ }\textcolor{comment}{/*!<\ MII\ Interrupt\ Status\ and\ Misc.\ Control\ Register\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00328}00328\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00329}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4a6cbf61f5e1a134d8983ef29fd2d386}{00329}}\ \textcolor{preprocessor}{\#define\ PHY\_LINK\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001U)\ \ }\textcolor{comment}{/*!<\ PHY\ Link\ mask\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00330}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a74c081bc55e9ff96bf229f44e96c6155}{00330}}\ \textcolor{preprocessor}{\#define\ PHY\_SPEED\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002U)\ \ }\textcolor{comment}{/*!<\ PHY\ Speed\ mask\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00331}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ab928f45585242fde1a8d81a2d9ed22d0}{00331}}\ \textcolor{preprocessor}{\#define\ PHY\_DUPLEX\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004U)\ \ }\textcolor{comment}{/*!<\ PHY\ Duplex\ mask\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00333}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_ab0314b8559d5895194b435ae93aee9c9}{00333}}\ \textcolor{preprocessor}{\#define\ PHY\_MICR\_INT\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002U)\ \ }\textcolor{comment}{/*!<\ PHY\ Enable\ interrupts\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00334}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aca1bf9e00caba70caa1f1a9e56cbee5c}{00334}}\ \textcolor{preprocessor}{\#define\ PHY\_MICR\_INT\_OE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001U)\ \ }\textcolor{comment}{/*!<\ PHY\ Enable\ output\ interrupt\ events\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00336}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_aaf06885683edcd946ad960f59e8a6f9a}{00336}}\ \textcolor{preprocessor}{\#define\ PHY\_MISR\_LINK\_INT\_EN\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0020U)\ \ }\textcolor{comment}{/*!<\ Enable\ Interrupt\ on\ change\ of\ link\ status\ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00337}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a7c378eb26673981df0834658f4fec4c1}{00337}}\ \textcolor{preprocessor}{\#define\ PHY\_LINK\_INTERRUPT\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x2000U)\ \ }\textcolor{comment}{/*!<\ PHY\ link\ status\ interrupt\ mask\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00339}00339\ \textcolor{comment}{/*\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ SPI\ peripheral\ configuration\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00341}00341\ \textcolor{comment}{/*\ CRC\ FEATURE:\ Use\ to\ activate\ CRC\ feature\ inside\ HAL\ SPI\ Driver}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00342}00342\ \textcolor{comment}{*\ Activated:\ CRC\ code\ is\ present\ inside\ driver}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00343}00343\ \textcolor{comment}{*\ Deactivated:\ CRC\ code\ cleaned\ from\ driver}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00344}00344\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00346}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a4c6fab687afc7ba4469b1b2d34472358}{00346}}\ \textcolor{preprocessor}{\#define\ USE\_SPI\_CRC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00348}00348\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00349}00349\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00350}00350\ \textcolor{comment}{\ \ *\ @brief\ Include\ module's\ header\ file\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00351}00351\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00353}00353\ \textcolor{preprocessor}{\#ifdef\ HAL\_RCC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00354}00354\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_rcc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00355}00355\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_RCC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00357}00357\ \textcolor{preprocessor}{\#ifdef\ HAL\_GPIO\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00358}00358\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_gpio.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00359}00359\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_GPIO\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00361}00361\ \textcolor{preprocessor}{\#ifdef\ HAL\_DMA\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00362}00362\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_dma.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00363}00363\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DMA\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00364}00364\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00365}00365\ \textcolor{preprocessor}{\#ifdef\ HAL\_CORTEX\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00366}00366\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_cortex.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00367}00367\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CORTEX\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00369}00369\ \textcolor{preprocessor}{\#ifdef\ HAL\_ADC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00370}00370\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_adc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00371}00371\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_ADC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00373}00373\ \textcolor{preprocessor}{\#ifdef\ HAL\_CAN\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00374}00374\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_can.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00375}00375\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CAN\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00377}00377\ \textcolor{preprocessor}{\#ifdef\ HAL\_CAN\_LEGACY\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00378}00378\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_can\_legacy.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00379}00379\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CAN\_LEGACY\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00381}00381\ \textcolor{preprocessor}{\#ifdef\ HAL\_CEC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00382}00382\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_cec.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00383}00383\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CEC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00385}00385\ \textcolor{preprocessor}{\#ifdef\ HAL\_CRC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00386}00386\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_crc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00387}00387\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CRC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00389}00389\ \textcolor{preprocessor}{\#ifdef\ HAL\_CRYP\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00390}00390\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_cryp.h"{}}\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00391}00391\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_CRYP\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00393}00393\ \textcolor{preprocessor}{\#ifdef\ HAL\_DMA2D\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00394}00394\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_dma2d.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00395}00395\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DMA2D\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00397}00397\ \textcolor{preprocessor}{\#ifdef\ HAL\_DAC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00398}00398\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_dac.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00399}00399\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DAC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00401}00401\ \textcolor{preprocessor}{\#ifdef\ HAL\_DCMI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00402}00402\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_dcmi.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00403}00403\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DCMI\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00405}00405\ \textcolor{preprocessor}{\#ifdef\ HAL\_ETH\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00406}00406\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_eth.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00407}00407\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_ETH\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00409}00409\ \textcolor{preprocessor}{\#ifdef\ HAL\_FLASH\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00410}00410\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_flash.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00411}00411\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_FLASH\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00412}00412\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00413}00413\ \textcolor{preprocessor}{\#ifdef\ HAL\_SRAM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00414}00414\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_sram.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00415}00415\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SRAM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00417}00417\ \textcolor{preprocessor}{\#ifdef\ HAL\_NOR\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00418}00418\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_nor.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00419}00419\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_NOR\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00421}00421\ \textcolor{preprocessor}{\#ifdef\ HAL\_NAND\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00422}00422\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_nand.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00423}00423\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_NAND\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00425}00425\ \textcolor{preprocessor}{\#ifdef\ HAL\_SDRAM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00426}00426\ \textcolor{preprocessor}{\ \ \#include\ "{}stm32f7xx\_hal\_sdram.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00427}00427\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SDRAM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00429}00429\ \textcolor{preprocessor}{\#ifdef\ HAL\_HASH\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00430}00430\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_hash.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00431}00431\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_HASH\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00432}00432\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00433}00433\ \textcolor{preprocessor}{\#ifdef\ HAL\_I2C\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00434}00434\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_i2c.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00435}00435\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_I2C\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00437}00437\ \textcolor{preprocessor}{\#ifdef\ HAL\_I2S\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00438}00438\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_i2s.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00439}00439\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_I2S\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00440}00440\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00441}00441\ \textcolor{preprocessor}{\#ifdef\ HAL\_IWDG\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00442}00442\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_iwdg.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00443}00443\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_IWDG\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00445}00445\ \textcolor{preprocessor}{\#ifdef\ HAL\_LPTIM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00446}00446\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_lptim.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00447}00447\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_LPTIM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00449}00449\ \textcolor{preprocessor}{\#ifdef\ HAL\_LTDC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00450}00450\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_ltdc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00451}00451\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_LTDC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00453}00453\ \textcolor{preprocessor}{\#ifdef\ HAL\_PWR\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00454}00454\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_pwr.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00455}00455\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_PWR\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00457}00457\ \textcolor{preprocessor}{\#ifdef\ HAL\_QSPI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00458}00458\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_qspi.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00459}00459\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_QSPI\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00460}00460\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00461}00461\ \textcolor{preprocessor}{\#ifdef\ HAL\_RNG\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00462}00462\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_rng.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00463}00463\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_RNG\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00465}00465\ \textcolor{preprocessor}{\#ifdef\ HAL\_RTC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00466}00466\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_rtc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00467}00467\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_RTC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00469}00469\ \textcolor{preprocessor}{\#ifdef\ HAL\_SAI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00470}00470\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_sai.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00471}00471\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SAI\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00473}00473\ \textcolor{preprocessor}{\#ifdef\ HAL\_SD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00474}00474\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_sd.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00475}00475\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SD\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00476}00476\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00477}00477\ \textcolor{preprocessor}{\#ifdef\ HAL\_SPDIFRX\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00478}00478\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_spdifrx.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00479}00479\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SPDIFRX\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00481}00481\ \textcolor{preprocessor}{\#ifdef\ HAL\_SPI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00482}00482\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_spi.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00483}00483\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SPI\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00484}00484\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00485}00485\ \textcolor{preprocessor}{\#ifdef\ HAL\_TIM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00486}00486\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_tim.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00487}00487\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_TIM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00489}00489\ \textcolor{preprocessor}{\#ifdef\ HAL\_UART\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00490}00490\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_uart.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00491}00491\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_UART\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00493}00493\ \textcolor{preprocessor}{\#ifdef\ HAL\_USART\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00494}00494\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_usart.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00495}00495\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_USART\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00497}00497\ \textcolor{preprocessor}{\#ifdef\ HAL\_IRDA\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00498}00498\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_irda.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00499}00499\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_IRDA\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00500}00500\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00501}00501\ \textcolor{preprocessor}{\#ifdef\ HAL\_SMARTCARD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00502}00502\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_smartcard.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00503}00503\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SMARTCARD\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00505}00505\ \textcolor{preprocessor}{\#ifdef\ HAL\_WWDG\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00506}00506\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_wwdg.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00507}00507\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_WWDG\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00509}00509\ \textcolor{preprocessor}{\#ifdef\ HAL\_PCD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00510}00510\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_pcd.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00511}00511\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_PCD\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00513}00513\ \textcolor{preprocessor}{\#ifdef\ HAL\_HCD\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00514}00514\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_hcd.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00515}00515\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_HCD\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00517}00517\ \textcolor{preprocessor}{\#ifdef\ HAL\_DFSDM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00518}00518\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_dfsdm.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00519}00519\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DFSDM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00521}00521\ \textcolor{preprocessor}{\#ifdef\ HAL\_DSI\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00522}00522\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_dsi.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00523}00523\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DSI\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00525}00525\ \textcolor{preprocessor}{\#ifdef\ HAL\_JPEG\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00526}00526\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_jpeg.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00527}00527\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_JPEG\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00529}00529\ \textcolor{preprocessor}{\#ifdef\ HAL\_MDIOS\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00530}00530\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_mdios.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00531}00531\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_MDIOS\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00533}00533\ \textcolor{preprocessor}{\#ifdef\ HAL\_SMBUS\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00534}00534\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_smbus.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00535}00535\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_SMBUS\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00536}00536\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00537}00537\ \textcolor{preprocessor}{\#ifdef\ HAL\_MMC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00538}00538\ \textcolor{preprocessor}{\ \#include\ "{}stm32f7xx\_hal\_mmc.h"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00539}00539\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_MMC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00540}00540\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00541}00541\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00542}00542\ \textcolor{preprocessor}{\#ifdef\ \ USE\_FULL\_ASSERT}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00543}00543\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00544}00544\ \textcolor{comment}{\ \ *\ @brief\ \ The\ assert\_param\ macro\ is\ used\ for\ function's\ parameters\ check.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00545}00545\ \textcolor{comment}{\ \ *\ @param\ \ expr:\ If\ expr\ is\ false,\ it\ calls\ assert\_failed\ function}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00546}00546\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ which\ reports\ the\ name\ of\ the\ source\ file\ and\ the\ source}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00547}00547\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ line\ number\ of\ the\ call\ that\ failed.\ }}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00548}00548\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ If\ expr\ is\ true,\ it\ returns\ no\ value.}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00549}00549\ \textcolor{comment}{\ \ *\ @retval\ None}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00550}00550\ \textcolor{comment}{\ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00551}00551\ \textcolor{preprocessor}{\ \ \#define\ assert\_param(expr)\ ((expr)\ ?\ (void)0\ :\ assert\_failed((uint8\_t\ *)\_\_FILE\_\_,\ \_\_LINE\_\_))}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00552}00552\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00553}00553\ \ \ \textcolor{keywordtype}{void}\ assert\_failed(uint8\_t*\ file,\ uint32\_t\ line);}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00554}00554\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00555}\mbox{\hyperlink{stm32f7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{00555}}\ \textcolor{preprocessor}{\ \ \#define\ assert\_param(expr)\ ((void)0U)}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00556}00556\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_ASSERT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00557}00557\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00559}00559\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00560}00560\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00561}00561\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00562}00562\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00563}00563\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F7xx\_HAL\_CONF\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00564}00564\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00565}00565\ }
+\DoxyCodeLine{\Hypertarget{stm32f7xx__hal__conf_8h_source_l00566}00566\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

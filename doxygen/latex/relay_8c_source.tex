@@ -1,0 +1,34 @@
+\doxysection{relay.\+c}
+\hypertarget{relay_8c_source}{}\label{relay_8c_source}\index{Code/relay.c@{Code/relay.c}}
+\mbox{\hyperlink{relay_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}stm32f7xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{relay_8h}{relay.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00005}\mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{00005}}\ GPIO\_InitTypeDef\ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}};}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00007}\mbox{\hyperlink{relay_8c_a8ff304ac775b3097edffa200e58bcc21}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{relay_8c_a8ff304ac775b3097edffa200e58bcc21}{relay\_init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//enable\ the\ GPIO\ clock}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00009}00009\ \ \ \ \ \_\_HAL\_RCC\_GPIOI\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00010}00010\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00011}00011\ \ \ \ \ \ \ \textcolor{comment}{//Config\ for\ GPIO\ I2\ \ }}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Pin\ =\ GPIO\_PIN\_2;}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00013}00013\ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Mode\ =\ GPIO\_MODE\_OUTPUT\_PP;}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Speed\ =\ GPIO\_SPEED\_HIGH;}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00016}00016\ \ \ \ \ HAL\_GPIO\_Init(GPIOI,\ \&\mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}});}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00017}00017\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00021}\mbox{\hyperlink{relay_8c_a798fc156480f5feea1a9e83d6848dfea}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{relay_8c_a798fc156480f5feea1a9e83d6848dfea}{relay\_on}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00022}00022\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOI,\ GPIO\_PIN\_2,\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00026}\mbox{\hyperlink{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a}{relay\_off}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00027}00027\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOI,\ GPIO\_PIN\_2,\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{\Hypertarget{relay_8c_source_l00028}00028\ \}}
+
+\end{DoxyCode}

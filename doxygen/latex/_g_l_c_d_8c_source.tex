@@ -1,0 +1,46 @@
+\doxysection{GLCD.\+c}
+\hypertarget{_g_l_c_d_8c_source}{}\label{_g_l_c_d_8c_source}\index{Code/GLCD.c@{Code/GLCD.c}}
+\mbox{\hyperlink{_g_l_c_d_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}stm32f7xx\_hal.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}GLCD\_Config.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}Board\_GLCD.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Board\_Touch.h"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_g_l_c_d_8h}{GLCD.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00007}00007\ \textcolor{keyword}{extern}\ GLCD\_FONT\ \mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\_Font\_16x24}};}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00011}\mbox{\hyperlink{_g_l_c_d_8c_ae337c54455498be844834467d395f345}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_g_l_c_d_8c_ae337c54455498be844834467d395f345}{backgroundColor}}\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00012}00012\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00013}00013\ \ \ Touch\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00014}00014\ \ \ GLCD\_SetBackgroundColor(GLCD\_COLOR\_WHITE);\ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00016}\mbox{\hyperlink{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8}{homePage}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00018}00018\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00019}00019\ \ \ Touch\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00020}00020\ \ \ \ \ GLCD\_ClearScreen();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00022}00022\ \ \ \ \ GLCD\_SetFont(\&\mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\_Font\_16x24}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00023}00023\ \ \ GLCD\_SetForegroundColor(GLCD\_COLOR\_BLACK);}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00024}00024\ \ \ \ \ GLCD\_DrawString(175,\ 80,\ \textcolor{stringliteral}{"{}Welcome"{}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00025}00025\ \ \ \ \ GLCD\_DrawString(210,110,\ \textcolor{stringliteral}{"{}to"{}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00026}00026\ \ \ \ \ GLCD\_DrawString(80,\ 140,\textcolor{stringliteral}{"{}Nano\ Auto\ Hydrophonic"{}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00027}00027\ \ \ \ \ GLCD\_DrawString(130,\ 180,\ \textcolor{stringliteral}{"{}Press\ to\ Start"{}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00030}\mbox{\hyperlink{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74}{readingPage}}\ (\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00032}00032\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00033}00033\ \ \ \ \ Touch\_Initialize();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00034}00034\ \ \ \ \ GLCD\_ClearScreen();}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00036}00036\ \ \ \ \ GLCD\_SetFont(\&\mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\_Font\_16x24}});}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00037}00037\ \ \ GLCD\_SetForegroundColor(GLCD\_COLOR\_BLACK);}
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_l_c_d_8c_source_l00040}00040\ \}}
+
+\end{DoxyCode}

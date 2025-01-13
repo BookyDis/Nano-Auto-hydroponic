@@ -1,0 +1,117 @@
+\doxysection{Code/\+GLCD.c File Reference}
+\hypertarget{_g_l_c_d_8c}{}\label{_g_l_c_d_8c}\index{Code/GLCD.c@{Code/GLCD.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD\+\_\+\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+Touch.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_ae337c54455498be844834467d395f345}{background\+Color}} (void)
+\begin{DoxyCompactList}\small\item\em This function will set the background color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8}{home\+Page}} ()
+\begin{DoxyCompactList}\small\item\em This function will display home page at the start of the system on the GLCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74}{reading\+Page}} (void)
+\begin{DoxyCompactList}\small\item\em This function will display the diagnostic page if the screen is touched. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GLCD\+\_\+\+FONT \mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\+\_\+\+Font\+\_\+16x24}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_g_l_c_d_8c_ae337c54455498be844834467d395f345}\label{_g_l_c_d_8c_ae337c54455498be844834467d395f345} 
+\index{GLCD.c@{GLCD.c}!backgroundColor@{backgroundColor}}
+\index{backgroundColor@{backgroundColor}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{backgroundColor()}{backgroundColor()}}
+{\footnotesize\ttfamily void background\+Color (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will set the background color. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_l_c_d_8c_source_l00011}{11}} of file \mbox{\hyperlink{_g_l_c_d_8c_source}{GLCD.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{00013\ \ \ Touch\_Initialize();}
+\DoxyCodeLine{00014\ \ \ GLCD\_SetBackgroundColor(GLCD\_COLOR\_WHITE);\ }
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8}\label{_g_l_c_d_8c_abe347ada42d85de0997962cceda35ee8} 
+\index{GLCD.c@{GLCD.c}!homePage@{homePage}}
+\index{homePage@{homePage}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{homePage()}{homePage()}}
+{\footnotesize\ttfamily void home\+Page (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will display home page at the start of the system on the GLCD. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_l_c_d_8c_source_l00016}{16}} of file \mbox{\hyperlink{_g_l_c_d_8c_source}{GLCD.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{00019\ \ \ Touch\_Initialize();}
+\DoxyCodeLine{00020\ \ \ \ \ GLCD\_ClearScreen();}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ GLCD\_SetFont(\&\mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\_Font\_16x24}});}
+\DoxyCodeLine{00023\ \ \ GLCD\_SetForegroundColor(GLCD\_COLOR\_BLACK);}
+\DoxyCodeLine{00024\ \ \ \ \ GLCD\_DrawString(175,\ 80,\ \textcolor{stringliteral}{"{}Welcome"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ GLCD\_DrawString(210,110,\ \textcolor{stringliteral}{"{}to"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ GLCD\_DrawString(80,\ 140,\textcolor{stringliteral}{"{}Nano\ Auto\ Hydrophonic"{}});}
+\DoxyCodeLine{00027\ \ \ \ \ GLCD\_DrawString(130,\ 180,\ \textcolor{stringliteral}{"{}Press\ to\ Start"{}});}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74}\label{_g_l_c_d_8c_ad97be0e858831cb0d7d1c6b05595ae74} 
+\index{GLCD.c@{GLCD.c}!readingPage@{readingPage}}
+\index{readingPage@{readingPage}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{readingPage()}{readingPage()}}
+{\footnotesize\ttfamily void reading\+Page (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will display the diagnostic page if the screen is touched. 
+
+
+
+Definition at line \mbox{\hyperlink{_g_l_c_d_8c_source_l00030}{30}} of file \mbox{\hyperlink{_g_l_c_d_8c_source}{GLCD.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ GLCD\_Initialize();}
+\DoxyCodeLine{00033\ \ \ \ \ Touch\_Initialize();}
+\DoxyCodeLine{00034\ \ \ \ \ GLCD\_ClearScreen();}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ GLCD\_SetFont(\&\mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\_Font\_16x24}});}
+\DoxyCodeLine{00037\ \ \ GLCD\_SetForegroundColor(GLCD\_COLOR\_BLACK);}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}\label{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1} 
+\index{GLCD.c@{GLCD.c}!GLCD\_Font\_16x24@{GLCD\_Font\_16x24}}
+\index{GLCD\_Font\_16x24@{GLCD\_Font\_16x24}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{GLCD\_Font\_16x24}{GLCD\_Font\_16x24}}
+{\footnotesize\ttfamily GLCD\+\_\+\+FONT GLCD\+\_\+\+Font\+\_\+16x24\hspace{0.3cm}{\ttfamily [extern]}}
+

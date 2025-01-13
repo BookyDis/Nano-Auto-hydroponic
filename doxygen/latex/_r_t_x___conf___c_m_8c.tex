@@ -1,0 +1,385 @@
+\doxysection{Code/\+RTE/\+CMSIS/\+RTX\+\_\+\+Conf\+\_\+\+CM.c File Reference}
+\hypertarget{_r_t_x___conf___c_m_8c}{}\label{_r_t_x___conf___c_m_8c}\index{Code/RTE/CMSIS/RTX\_Conf\_CM.c@{Code/RTE/CMSIS/RTX\_Conf\_CM.c}}
+{\ttfamily \#include "{}cmsis\+\_\+os.\+h"{}}\newline
+{\ttfamily \#include "{}RTX\+\_\+\+CM\+\_\+lib.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a309353d912327b7f4a2300711ee1b349}{OS\+\_\+\+TASKCNT}}~6
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a16495c133349f3e7c27ac933857c1a8c}{OS\+\_\+\+STKSIZE}}~50
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a95362a96f44d4314f148ae24edd52f7c}{OS\+\_\+\+MAINSTKSIZE}}~50
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a7cfcbf2c4f9d0a63424a2a48592955b1}{OS\+\_\+\+PRIVCNT}}~0
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a6e0d30986e4ae0df44f449a4b3b0fbec}{OS\+\_\+\+PRIVSTKSIZE}}~0
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a6ef9e00396f881f0fa9ac877150e5962}{OS\+\_\+\+STKCHECK}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ac820623da739e4219ee86f15bdcd9752}{OS\+\_\+\+STKINIT}}~0
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a786924d58be54e943a7e73458cebc51b}{OS\+\_\+\+RUNPRIV}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a1df397c6989309857ea85e7e26c24361}{OS\+\_\+\+SYSTICK}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9}{OS\+\_\+\+CLOCK}}~12000000
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc}{OS\+\_\+\+TICK}}~1000
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ae34f3058383d9fa9280bbf595618ab0a}{OS\+\_\+\+ROBIN}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ad89fdd7232cfba74d400080b6bcc0012}{OS\+\_\+\+ROBINTOUT}}~5
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a23b0f1095632e58b5ac0d8f7dcfdfded}{OS\+\_\+\+TIMERS}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a90af874f1df4dfb0f8821cc2d860dae6}{OS\+\_\+\+TIMERPRIO}}~5
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a76d1b01799981a753fc528e600015627}{OS\+\_\+\+TIMERSTKSZ}}~50
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a29701cff84a42494279367ad018f252d}{OS\+\_\+\+TIMERCBQS}}~4
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a93c8e36d441750016f9f72e102f68d66}{OS\+\_\+\+FIFOSZ}}~16
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ad11cf133eea28b601f9a63cd9af9b786}{OS\+\_\+\+MUTEXCNT}}~8
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a9d55a070ddb219165bd4287f08318d51}{OS\+\_\+\+TRV}}~((uint32\+\_\+t)(((double)\mbox{\hyperlink{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9}{OS\+\_\+\+CLOCK}}\texorpdfstring{$\ast$}{*}(double)\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc}{OS\+\_\+\+TICK}})/1E6)-\/1)
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d}{OS\+\_\+\+ERROR\+\_\+\+STACK\+\_\+\+OVF}}~1
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29}{OS\+\_\+\+ERROR\+\_\+\+FIFO\+\_\+\+OVF}}~2
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10}{OS\+\_\+\+ERROR\+\_\+\+MBX\+\_\+\+OVF}}~3
+\item 
+\#define \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8}{OS\+\_\+\+ERROR\+\_\+\+TIMER\+\_\+\+OVF}}~4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_r_t_x___conf___c_m_8c_afb4dc4d3dff8343a393726d2860282e4}{os\+\_\+idle\+\_\+demon}} (void)
+\begin{DoxyCompactList}\small\item\em The idle demon is running when no other thread is ready to run. \end{DoxyCompactList}\item 
+os\+Thread\+Id \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a395cca131b7746fc43c104a3485b77f7}{svc\+Thread\+Get\+Id}} (void)
+\item 
+void \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a651ae76b3acf45f80bf0e0487b51d6e6}{os\+\_\+error}} (uint32\+\_\+t error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Called when a runtime error is detected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9}\label{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_CLOCK@{OS\_CLOCK}}
+\index{OS\_CLOCK@{OS\_CLOCK}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_CLOCK}{OS\_CLOCK}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+CLOCK~12000000}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00111}{111}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29}\label{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ERROR\_FIFO\_OVF@{OS\_ERROR\_FIFO\_OVF}}
+\index{OS\_ERROR\_FIFO\_OVF@{OS\_ERROR\_FIFO\_OVF}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ERROR\_FIFO\_OVF}{OS\_ERROR\_FIFO\_OVF}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ERROR\+\_\+\+FIFO\+\_\+\+OVF~2}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00264}{264}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10}\label{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ERROR\_MBX\_OVF@{OS\_ERROR\_MBX\_OVF}}
+\index{OS\_ERROR\_MBX\_OVF@{OS\_ERROR\_MBX\_OVF}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ERROR\_MBX\_OVF}{OS\_ERROR\_MBX\_OVF}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ERROR\+\_\+\+MBX\+\_\+\+OVF~3}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00265}{265}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d}\label{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ERROR\_STACK\_OVF@{OS\_ERROR\_STACK\_OVF}}
+\index{OS\_ERROR\_STACK\_OVF@{OS\_ERROR\_STACK\_OVF}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ERROR\_STACK\_OVF}{OS\_ERROR\_STACK\_OVF}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ERROR\+\_\+\+STACK\+\_\+\+OVF~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00263}{263}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8}\label{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ERROR\_TIMER\_OVF@{OS\_ERROR\_TIMER\_OVF}}
+\index{OS\_ERROR\_TIMER\_OVF@{OS\_ERROR\_TIMER\_OVF}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ERROR\_TIMER\_OVF}{OS\_ERROR\_TIMER\_OVF}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ERROR\+\_\+\+TIMER\+\_\+\+OVF~4}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00266}{266}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a93c8e36d441750016f9f72e102f68d66}\label{_r_t_x___conf___c_m_8c_a93c8e36d441750016f9f72e102f68d66} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_FIFOSZ@{OS\_FIFOSZ}}
+\index{OS\_FIFOSZ@{OS\_FIFOSZ}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_FIFOSZ}{OS\_FIFOSZ}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+FIFOSZ~16}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00187}{187}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a95362a96f44d4314f148ae24edd52f7c}\label{_r_t_x___conf___c_m_8c_a95362a96f44d4314f148ae24edd52f7c} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_MAINSTKSIZE@{OS\_MAINSTKSIZE}}
+\index{OS\_MAINSTKSIZE@{OS\_MAINSTKSIZE}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_MAINSTKSIZE}{OS\_MAINSTKSIZE}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+MAINSTKSIZE~50}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00056}{56}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ad11cf133eea28b601f9a63cd9af9b786}\label{_r_t_x___conf___c_m_8c_ad11cf133eea28b601f9a63cd9af9b786} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_MUTEXCNT@{OS\_MUTEXCNT}}
+\index{OS\_MUTEXCNT@{OS\_MUTEXCNT}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_MUTEXCNT}{OS\_MUTEXCNT}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+MUTEXCNT~8}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00199}{199}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a7cfcbf2c4f9d0a63424a2a48592955b1}\label{_r_t_x___conf___c_m_8c_a7cfcbf2c4f9d0a63424a2a48592955b1} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_PRIVCNT@{OS\_PRIVCNT}}
+\index{OS\_PRIVCNT@{OS\_PRIVCNT}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_PRIVCNT}{OS\_PRIVCNT}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+PRIVCNT~0}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00063}{63}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a6e0d30986e4ae0df44f449a4b3b0fbec}\label{_r_t_x___conf___c_m_8c_a6e0d30986e4ae0df44f449a4b3b0fbec} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_PRIVSTKSIZE@{OS\_PRIVSTKSIZE}}
+\index{OS\_PRIVSTKSIZE@{OS\_PRIVSTKSIZE}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_PRIVSTKSIZE}{OS\_PRIVSTKSIZE}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+PRIVSTKSIZE~0}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00070}{70}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ae34f3058383d9fa9280bbf595618ab0a}\label{_r_t_x___conf___c_m_8c_ae34f3058383d9fa9280bbf595618ab0a} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ROBIN@{OS\_ROBIN}}
+\index{OS\_ROBIN@{OS\_ROBIN}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ROBIN}{OS\_ROBIN}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ROBIN~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00132}{132}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ad89fdd7232cfba74d400080b6bcc0012}\label{_r_t_x___conf___c_m_8c_ad89fdd7232cfba74d400080b6bcc0012} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_ROBINTOUT@{OS\_ROBINTOUT}}
+\index{OS\_ROBINTOUT@{OS\_ROBINTOUT}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_ROBINTOUT}{OS\_ROBINTOUT}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+ROBINTOUT~5}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00139}{139}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a786924d58be54e943a7e73458cebc51b}\label{_r_t_x___conf___c_m_8c_a786924d58be54e943a7e73458cebc51b} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_RUNPRIV@{OS\_RUNPRIV}}
+\index{OS\_RUNPRIV@{OS\_RUNPRIV}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_RUNPRIV}{OS\_RUNPRIV}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+RUNPRIV~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00092}{92}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a6ef9e00396f881f0fa9ac877150e5962}\label{_r_t_x___conf___c_m_8c_a6ef9e00396f881f0fa9ac877150e5962} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_STKCHECK@{OS\_STKCHECK}}
+\index{OS\_STKCHECK@{OS\_STKCHECK}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_STKCHECK}{OS\_STKCHECK}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+STKCHECK~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00077}{77}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ac820623da739e4219ee86f15bdcd9752}\label{_r_t_x___conf___c_m_8c_ac820623da739e4219ee86f15bdcd9752} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_STKINIT@{OS\_STKINIT}}
+\index{OS\_STKINIT@{OS\_STKINIT}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_STKINIT}{OS\_STKINIT}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+STKINIT~0}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00084}{84}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a16495c133349f3e7c27ac933857c1a8c}\label{_r_t_x___conf___c_m_8c_a16495c133349f3e7c27ac933857c1a8c} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_STKSIZE@{OS\_STKSIZE}}
+\index{OS\_STKSIZE@{OS\_STKSIZE}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_STKSIZE}{OS\_STKSIZE}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+STKSIZE~50}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00049}{49}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a1df397c6989309857ea85e7e26c24361}\label{_r_t_x___conf___c_m_8c_a1df397c6989309857ea85e7e26c24361} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_SYSTICK@{OS\_SYSTICK}}
+\index{OS\_SYSTICK@{OS\_SYSTICK}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_SYSTICK}{OS\_SYSTICK}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+SYSTICK~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00103}{103}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a309353d912327b7f4a2300711ee1b349}\label{_r_t_x___conf___c_m_8c_a309353d912327b7f4a2300711ee1b349} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TASKCNT@{OS\_TASKCNT}}
+\index{OS\_TASKCNT@{OS\_TASKCNT}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TASKCNT}{OS\_TASKCNT}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TASKCNT~6}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00042}{42}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc}\label{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TICK@{OS\_TICK}}
+\index{OS\_TICK@{OS\_TICK}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TICK}{OS\_TICK}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TICK~1000}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00119}{119}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a29701cff84a42494279367ad018f252d}\label{_r_t_x___conf___c_m_8c_a29701cff84a42494279367ad018f252d} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TIMERCBQS@{OS\_TIMERCBQS}}
+\index{OS\_TIMERCBQS@{OS\_TIMERCBQS}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TIMERCBQS}{OS\_TIMERCBQS}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TIMERCBQS~4}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00173}{173}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a90af874f1df4dfb0f8821cc2d860dae6}\label{_r_t_x___conf___c_m_8c_a90af874f1df4dfb0f8821cc2d860dae6} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TIMERPRIO@{OS\_TIMERPRIO}}
+\index{OS\_TIMERPRIO@{OS\_TIMERPRIO}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TIMERPRIO}{OS\_TIMERPRIO}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TIMERPRIO~5}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00159}{159}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a23b0f1095632e58b5ac0d8f7dcfdfded}\label{_r_t_x___conf___c_m_8c_a23b0f1095632e58b5ac0d8f7dcfdfded} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TIMERS@{OS\_TIMERS}}
+\index{OS\_TIMERS@{OS\_TIMERS}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TIMERS}{OS\_TIMERS}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TIMERS~1}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00148}{148}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a76d1b01799981a753fc528e600015627}\label{_r_t_x___conf___c_m_8c_a76d1b01799981a753fc528e600015627} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TIMERSTKSZ@{OS\_TIMERSTKSZ}}
+\index{OS\_TIMERSTKSZ@{OS\_TIMERSTKSZ}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TIMERSTKSZ}{OS\_TIMERSTKSZ}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TIMERSTKSZ~50}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00166}{166}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+\Hypertarget{_r_t_x___conf___c_m_8c_a9d55a070ddb219165bd4287f08318d51}\label{_r_t_x___conf___c_m_8c_a9d55a070ddb219165bd4287f08318d51} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!OS\_TRV@{OS\_TRV}}
+\index{OS\_TRV@{OS\_TRV}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{OS\_TRV}{OS\_TRV}}
+{\footnotesize\ttfamily \#define OS\+\_\+\+TRV~((uint32\+\_\+t)(((double)\mbox{\hyperlink{_r_t_x___conf___c_m_8c_adff23afdf544a322a38314870f8848b9}{OS\+\_\+\+CLOCK}}\texorpdfstring{$\ast$}{*}(double)\mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab6b10bd6d60e95ab28c775757f6bfbcc}{OS\+\_\+\+TICK}})/1E6)-\/1)}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00206}{206}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_r_t_x___conf___c_m_8c_a651ae76b3acf45f80bf0e0487b51d6e6}\label{_r_t_x___conf___c_m_8c_a651ae76b3acf45f80bf0e0487b51d6e6} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!os\_error@{os\_error}}
+\index{os\_error@{os\_error}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{os\_error()}{os\_error()}}
+{\footnotesize\ttfamily void os\+\_\+error (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Called when a runtime error is detected. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error\+\_\+code} & actual error code that has been detected \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00272}{272}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ }
+\DoxyCodeLine{00274\ \ \ \textcolor{comment}{/*\ HERE:\ include\ optional\ code\ to\ be\ executed\ on\ runtime\ error.\ */}}
+\DoxyCodeLine{00275\ \ \ \textcolor{keywordflow}{switch}\ (error\_code)\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_abf8311a7a239ec56c6d725f926ba766d}{OS\_ERROR\_STACK\_OVF}}:}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \textcolor{comment}{/*\ Stack\ overflow\ detected\ for\ the\ currently\ running\ task.\ */}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \textcolor{comment}{/*\ Thread\ can\ be\ identified\ by\ calling\ svcThreadGetId().\ \ \ */}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a075d54df14c85a6afe32b7f5c99c9c29}{OS\_ERROR\_FIFO\_OVF}}:}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \textcolor{comment}{/*\ ISR\ FIFO\ Queue\ buffer\ overflow\ detected.\ */}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_ab715d7d66c341c067ef0a97b55db8a10}{OS\_ERROR\_MBX\_OVF}}:}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \textcolor{comment}{/*\ Mailbox\ overflow\ detected.\ */}}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_r_t_x___conf___c_m_8c_a79d7e388d951f11bd0dabd13f722cea8}{OS\_ERROR\_TIMER\_OVF}}:}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \textcolor{comment}{/*\ User\ Timer\ Callback\ Queue\ overflow\ detected.\ */}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00291\ \ \ \}}
+\DoxyCodeLine{00292\ \ \ \textcolor{keywordflow}{for}\ (;;);}
+\DoxyCodeLine{00293\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_r_t_x___conf___c_m_8c_afb4dc4d3dff8343a393726d2860282e4}\label{_r_t_x___conf___c_m_8c_afb4dc4d3dff8343a393726d2860282e4} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!os\_idle\_demon@{os\_idle\_demon}}
+\index{os\_idle\_demon@{os\_idle\_demon}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{os\_idle\_demon()}{os\_idle\_demon()}}
+{\footnotesize\ttfamily void os\+\_\+idle\+\_\+demon (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The idle demon is running when no other thread is ready to run. 
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source_l00216}{216}} of file \mbox{\hyperlink{_r_t_x___conf___c_m_8c_source}{RTX\+\_\+\+Conf\+\_\+\+CM.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ }
+\DoxyCodeLine{00218\ \ \ \textcolor{keywordflow}{for}\ (;;)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{comment}{/*\ HERE:\ include\ optional\ user\ code\ to\ be\ executed\ when\ no\ thread\ runs.*/}}
+\DoxyCodeLine{00220\ \ \ \}}
+\DoxyCodeLine{00221\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_r_t_x___conf___c_m_8c_a395cca131b7746fc43c104a3485b77f7}\label{_r_t_x___conf___c_m_8c_a395cca131b7746fc43c104a3485b77f7} 
+\index{RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}!svcThreadGetId@{svcThreadGetId}}
+\index{svcThreadGetId@{svcThreadGetId}!RTX\_Conf\_CM.c@{RTX\_Conf\_CM.c}}
+\doxysubsubsection{\texorpdfstring{svcThreadGetId()}{svcThreadGetId()}}
+{\footnotesize\ttfamily os\+Thread\+Id svc\+Thread\+Get\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

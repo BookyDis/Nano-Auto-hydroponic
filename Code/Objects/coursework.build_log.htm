@@ -1,0 +1,209 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.18.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: sdsad dasdasdas, dasdas, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.18
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.18
+Dialog DLL:      DCM.DLL V1.13.6.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
+Dialog DLL:      TCM.DLL V1.14.8.0
+ 
+<h2>Project:</h2>
+C:\Coursework stuff\Uvsion project\Code Folder\coursework.uvprojx
+Project File Date:  05/10/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+buzzer.h(12): warning:  #1-D: last line of file ends without a newline
+  void buzzer_off(void);
+GLCD.h(12): warning:  #1-D: last line of file ends without a newline
+  void backgroundColor (void);
+led.h(10): warning:  #1295-D: Deprecated declaration led_on - give arg types
+  void led_on();
+led.h(14): warning:  #1295-D: Deprecated declaration led_off - give arg types
+  void led_off();
+main.c(142): warning:  #1-D: last line of file ends without a newline
+  }
+main.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=21004 RO-data=6928 RW-data=144 ZI-data=266800  
+".\Objects\coursework.axf" - 0 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ::CMSIS:RTOS:1.0.0 (API)
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: RTOS Version: 1.0.0
+   * Component: CORE Version: 5.3.0
+   * Component: Keil RTX Version: 4.82.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.0.0.pack
+                ::Board Support:Graphic LCD:1.00 (API)
+                Keil MDK-ARM Professional Middleware for ARM Cortex-M based devices
+   * Component: Graphic LCD Version: 1.00
+   * Component: Touchscreen Version: 1.00
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F7xx_DFP.2.10.0.pack
+                ::Device:STM32Cube Framework:1.0.0 (API)
+                STMicroelectronics STM32F7 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Startup Version: 1.2.2
+   * Component: Classic Version: 1.2.5
+   * Component: Cortex Version: 1.2.5
+   * Component: ADC Version: 1.2.5
+   * Component: Common Version: 1.2.5
+   * Component: DMA Version: 1.2.5
+   * Component: GPIO Version: 1.2.5
+   * Component: I2C Version: 1.2.5
+   * Component: LTDC Version: 1.2.5
+   * Component: RCC Version: 1.2.5
+   * Component: PWR Version: 1.2.5
+   * Component: UART Version: 1.2.5
+   * Component: SDRAM Version: 1.2.5
+   * Component: Basic I/O Version: 1.1.1
+   * Component: SDRAM Version: 1.1.1
+   * Component: Graphic LCD Version: 1.1.1
+   * Component: Touchscreen Version: 1.1.1
+   * Component: Touch Screen Version: 1.1.1
+
+<h2>Collection of Component include folders:</h2>
+  C:\Coursework stuff\Uvsion project\Code Folder\RTE
+  C:\Coursework stuff\Uvsion project\Code Folder\RTE\Device\STM32F746NGHx
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\RTOS\RTX\INC
+  C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.0.0\Board
+  C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.10.0\Drivers\BSP\STM32746G-Discovery
+  C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.10.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.10.0\Drivers\STM32F7xx_HAL_Driver\Inc
+  C:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.10.0\MDK\Boards\ST\STM32F746G_Discovery\Common
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS:RTOS:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.82.0
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM4.lib
+
+   * Component: ::Board Support:Graphic LCD:1.00 (API)
+      Include file:  Board\Board_GLCD.h
+
+   * Component: ::Board Support:Touchscreen:1.00 (API)
+      Include file:  Board\Board_Touch.h
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: Keil::Device:Startup:1.2.2
+      Source file:   MDK\Device\Source\ARM\STM32F74x_75x_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F7xx\Include\stm32f7xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\arm\startup_stm32f746xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F74x_75x_OTP.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\system_stm32f7xx.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.2.5
+      Source file:   MDK\Templates\Src\stm32f7xx_hal_msp.c
+      Include file:  MDK\Templates_LL\Inc\main.h
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f7xx_hal_conf.h
+      Include file:  MDK\Templates\Inc\stm32f7xx_it.h
+      Include file:  MDK\Templates\Inc\main.h
+      Source file:   MDK\Templates_LL\Src\main.c
+      Source file:   MDK\Templates\Src\stm32f7xx_it.c
+      Source file:   MDK\Templates\Src\main.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:ADC:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c
+      Include file:  Drivers\STM32F7xx_HAL_Driver\Inc\stm32f7xx_hal.h
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma_ex.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_dma.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:I2C:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c_ex.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_i2c.c
+
+   * Component: Keil::Device:STM32Cube HAL:LTDC:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_ltdc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_rcc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:UART:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_uart.c
+
+   * Component: Keil::Device:STM32Cube HAL:SDRAM:1.2.5
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_ll_fmc.c
+      Source file:   Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_sdram.c
+
+   * Component: Keil.STM32F746G-Discovery::Board Support:Drivers:Basic I/O:1.1.1
+      Source file:   Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.c
+      Include file:  Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.h
+
+   * Component: Keil.STM32F746G-Discovery::Board Support:Drivers:SDRAM:1.1.1
+      Include file:  Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h
+      Source file:   Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.c
+
+   * Component: Keil.STM32F746G-Discovery::Board Support:Graphic LCD:1.1.1
+      Include file:  MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Config.h
+      Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_746G_Discovery.c
+      Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\GLCD_Fonts.c
+
+   * Component: Keil.STM32F746G-Discovery::Board Support:Touchscreen:1.1.1
+      Source file:   MDK\Boards\ST\STM32F746G_Discovery\Common\Touch_746G_Discovery.c
+
+   * Component: Keil.STM32F746G-Discovery::Board Support:Drivers:Touch Screen:1.1.1
+      Source file:   Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.c
+      Source file:   Drivers\BSP\Components\ft5336\ft5336.c
+      Include file:  Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.h
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

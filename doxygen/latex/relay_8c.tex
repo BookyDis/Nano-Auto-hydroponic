@@ -1,0 +1,107 @@
+\doxysection{Code/relay.c File Reference}
+\hypertarget{relay_8c}{}\label{relay_8c}\index{Code/relay.c@{Code/relay.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}relay.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{relay_8c_a8ff304ac775b3097edffa200e58bcc21}{relay\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function will initialize GPIO for the relay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{relay_8c_a798fc156480f5feea1a9e83d6848dfea}{relay\+\_\+on}} (void)
+\begin{DoxyCompactList}\small\item\em This function will write high signal to the GPIO and will turn on the relay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a}{relay\+\_\+off}} (void)
+\begin{DoxyCompactList}\small\item\em This function will write low signal to the GPIO and will turn off the relay. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\+\_\+gpio}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{relay_8c_a8ff304ac775b3097edffa200e58bcc21}\label{relay_8c_a8ff304ac775b3097edffa200e58bcc21} 
+\index{relay.c@{relay.c}!relay\_init@{relay\_init}}
+\index{relay\_init@{relay\_init}!relay.c@{relay.c}}
+\doxysubsubsection{\texorpdfstring{relay\_init()}{relay\_init()}}
+{\footnotesize\ttfamily void relay\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will initialize GPIO for the relay. 
+
+
+
+Definition at line \mbox{\hyperlink{relay_8c_source_l00007}{7}} of file \mbox{\hyperlink{relay_8c_source}{relay.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//enable\ the\ GPIO\ clock}}
+\DoxyCodeLine{00009\ \ \ \ \ \_\_HAL\_RCC\_GPIOI\_CLK\_ENABLE();}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \textcolor{comment}{//Config\ for\ GPIO\ I2\ \ }}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Pin\ =\ GPIO\_PIN\_2;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Mode\ =\ GPIO\_MODE\_OUTPUT\_PP;}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}}.Speed\ =\ GPIO\_SPEED\_HIGH;}
+\DoxyCodeLine{00016\ \ \ \ \ HAL\_GPIO\_Init(GPIOI,\ \&\mbox{\hyperlink{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}{relay\_gpio}});}
+\DoxyCodeLine{00017\ \ \ \ }
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\Hypertarget{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a}\label{relay_8c_aded2e162d1f10051c4c515fd2f14ff4a} 
+\index{relay.c@{relay.c}!relay\_off@{relay\_off}}
+\index{relay\_off@{relay\_off}!relay.c@{relay.c}}
+\doxysubsubsection{\texorpdfstring{relay\_off()}{relay\_off()}}
+{\footnotesize\ttfamily void relay\+\_\+off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will write low signal to the GPIO and will turn off the relay. 
+
+
+
+Definition at line \mbox{\hyperlink{relay_8c_source_l00026}{26}} of file \mbox{\hyperlink{relay_8c_source}{relay.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOI,\ GPIO\_PIN\_2,\ GPIO\_PIN\_RESET);}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+\Hypertarget{relay_8c_a798fc156480f5feea1a9e83d6848dfea}\label{relay_8c_a798fc156480f5feea1a9e83d6848dfea} 
+\index{relay.c@{relay.c}!relay\_on@{relay\_on}}
+\index{relay\_on@{relay\_on}!relay.c@{relay.c}}
+\doxysubsubsection{\texorpdfstring{relay\_on()}{relay\_on()}}
+{\footnotesize\ttfamily void relay\+\_\+on (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will write high signal to the GPIO and will turn on the relay. 
+
+
+
+Definition at line \mbox{\hyperlink{relay_8c_source_l00021}{21}} of file \mbox{\hyperlink{relay_8c_source}{relay.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ HAL\_GPIO\_WritePin(GPIOI,\ GPIO\_PIN\_2,\ GPIO\_PIN\_SET);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495}\label{relay_8c_aa2761b3d7b6332f8586c35fb4b8f9495} 
+\index{relay.c@{relay.c}!relay\_gpio@{relay\_gpio}}
+\index{relay\_gpio@{relay\_gpio}!relay.c@{relay.c}}
+\doxysubsubsection{\texorpdfstring{relay\_gpio}{relay\_gpio}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Init\+Type\+Def relay\+\_\+gpio}
+
+
+
+Definition at line \mbox{\hyperlink{relay_8c_source_l00005}{5}} of file \mbox{\hyperlink{relay_8c_source}{relay.\+c}}.
+
