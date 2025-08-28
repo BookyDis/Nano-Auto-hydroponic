@@ -1,1 +1,1 @@
-UEA PROJECT
+This is my UEA 2nd year embedded system module project, I developed an automatic hydroponic that can detect amount of water in the system with an arduino water sensor and by using relay to control a water pump. While using Keil Uvision IDE to develop the code and flash it onto STM32F746NG board
